@@ -38,13 +38,3 @@
   transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.23, 1, 0.05, 1.2);
 }
-
-@keyframes wiggle {
-  0%,
-  100% {
-    transform: translateX(0rem) translateY(0rem);
-  }
-  50% {
-    transform: translateX(0.15rem) translateY(0.15rem);
-  }
-}
