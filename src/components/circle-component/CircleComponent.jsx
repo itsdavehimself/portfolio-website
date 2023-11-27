@@ -55,5 +55,5 @@ export default function CircleComponent({ children }) {
 }
 
 CircleComponent.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.element,
 };
