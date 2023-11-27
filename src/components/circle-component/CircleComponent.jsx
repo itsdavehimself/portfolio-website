@@ -8,8 +8,8 @@ const CircleComponent = ({ children }) => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const handleMouseMove = (e) => {
-    const offsetX = circleSize.width / 2.5;
-    const offsetY = circleSize.height / 2.5;
+    const offsetX = circleSize.width / 2.45;
+    const offsetY = circleSize.height / 2.35;
 
     const smallCircleOffsetX = circleSize.width / 10;
     const smallCircleOffsetY = circleSize.height / 10;
@@ -34,17 +34,18 @@ const CircleComponent = ({ children }) => {
   return (
     <div className={styles.container} onMouseMove={handleMouseMove}>
       <div
-        className={`${styles.circle} ${
-          isTransitioning ? styles.transitioning : ''
-        }`}
+        className={`${styles.circle}`}
         style={{ left: `${position.x}px`, top: `${position.y}px` }}
         onTransitionEnd={handleTransitionEnd}
       ></div>
       <div
         className={`${styles['inside-circle']} ${
-          isTransitioning ? styles.transitioning : ''
+          isTransitioning ? styles['transitioning-inside'] : ''
         }`}
-        style={{ left: `${secondPosition.x}px`, top: `${secondPosition.y}px` }}
+        style={{
+          left: `${secondPosition.x}px`,
+          top: `${secondPosition.y}px`,
+        }}
         onTransitionEnd={handleTransitionEnd}
       ></div>
       {children}
