@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0f0f0f;
+  color: white;
+  cursor: none;
+}
+
+.circle {
+  width: 2rem;
+  height: 2rem;
+  border-color: white;
+  border-style: solid;
+  border-radius: 50%;
+  position: absolute;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.05, 1);
+}
+
+.inside-circle {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.05, 1.2);
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: translateX(0rem) translateY(0rem);
+  }
+  50% {
+    transform: translateX(0.15rem) translateY(0.15rem);
+  }
+}
