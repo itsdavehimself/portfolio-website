@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import styles from './CircleComponent.module.css';
+import PropTypes from 'prop-types';
 
-const CircleComponent = ({ children }) => {
+export default function CircleComponent({ children }) {
   const [circleSize] = useState({ width: 44, height: 40 });
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [secondPosition, setSecondPosition] = useState({ x: 0, y: 0 });
@@ -51,6 +52,8 @@ const CircleComponent = ({ children }) => {
       {children}
     </div>
   );
-};
+}
 
-export default CircleComponent;
+CircleComponent.propTypes = {
+  children: PropTypes.node,
+};
