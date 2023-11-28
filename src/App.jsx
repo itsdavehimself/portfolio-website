@@ -1,8 +1,17 @@
 import './App.css';
-import LandingPage from './components/landing-page/LandingPage';
+import AboutMe from './components/about-me/AboutMe';
+import HeroSection from './components/hero-section/HeroSection';
+import CircleComponent from './components/circle-component/CircleComponent';
 
 function App() {
-  return <LandingPage />;
+  return (
+    <CircleComponent>
+      <>
+        <HeroSection />
+        <AboutMe />
+      </>
+    </CircleComponent>
+  );
 }
 
 export default App;
