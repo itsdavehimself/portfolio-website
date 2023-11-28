@@ -23,13 +23,14 @@ h2 {
   background-color: #0f0f0f;
 }
 
-/* .overlay {
+.overlay {
   display: flex;
   align-items: center;
   width: 100vw;
   height: 100vh;
   background-image: url('https://i.picsum.photos/id/100/2500/1656.jpg?hmac=gWyN-7ZB32rkAjMhKXQgdHOIBRHyTSgzuOK6U0vXb1w');
   background-position: center;
+  pointer-events: none;
 }
 
 .overlay:after {
@@ -40,7 +41,8 @@ h2 {
   position: fixed;
   opacity: 0.05;
   animation: animateGrain 8s steps(10) infinite;
-} */
+  pointer-events: none;
+}
 
 .container {
   display: grid;
