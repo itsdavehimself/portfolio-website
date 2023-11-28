@@ -19,6 +19,7 @@
   position: absolute;
   transition-duration: 1s;
   transition-timing-function: cubic-bezier(0.23, 1, 0.05, 1);
+  mix-blend-mode: difference;
 }
 
 .inside-circle {
@@ -29,12 +30,18 @@
   position: absolute;
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0.23, 1, 0.05, 1.2);
+  mix-blend-mode: difference;
 }
 
 .transitioning-inside {
-  height: 0.7rem;
-  width: 0.7rem;
-  opacity: 0.7;
+  height: 0.8rem;
+  width: 0.8rem;
+  opacity: 0.6;
   transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.23, 1, 0.05, 1.2);
+  mix-blend-mode: difference;
+}
+
+.hidden {
+  opacity: 0;
 }

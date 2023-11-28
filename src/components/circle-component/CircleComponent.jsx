@@ -7,6 +7,7 @@ export default function CircleComponent({ children }) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [secondPosition, setSecondPosition] = useState({ x: 0, y: 0 });
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (e) => {
     const offsetX = circleSize.width / 2.45;
@@ -32,17 +33,30 @@ export default function CircleComponent({ children }) {
     setIsTransitioning(false);
   };
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
-    <div className={styles.container} onMouseMove={handleMouseMove}>
+    <div
+      className={styles.container}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div
-        className={`${styles.circle}`}
+        className={`${styles.circle} ${isHovered ? '' : styles.hidden}`}
         style={{ left: `${position.x}px`, top: `${position.y}px` }}
         onTransitionEnd={handleTransitionEnd}
       ></div>
       <div
         className={`${styles['inside-circle']} ${
           isTransitioning ? styles['transitioning-inside'] : ''
-        }`}
+        } ${isHovered ? '' : styles.hidden}`}
         style={{
           left: `${secondPosition.x}px`,
           top: `${secondPosition.y}px`,
