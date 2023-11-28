@@ -10,23 +10,29 @@ export default function CircleComponent({ children }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (e) => {
+    const containerRect = e.currentTarget.getBoundingClientRect();
+
     const offsetX = circleSize.width / 2.45;
     const offsetY = circleSize.height / 2.35;
 
     const smallCircleOffsetX = circleSize.width / 10;
     const smallCircleOffsetY = circleSize.height / 10;
 
-    setTimeout(() => {
-      setIsTransitioning(true);
-      setPosition({
-        x: e.clientX - offsetX,
-        y: e.clientY - offsetY,
-      });
-      setSecondPosition({
-        x: e.clientX - smallCircleOffsetX,
-        y: e.clientY - smallCircleOffsetY,
-      });
-    }, 0);
+    const relativeX = e.clientX - containerRect.left - offsetX;
+    const relativeY = e.clientY - containerRect.top - offsetY;
+
+    const secondRelativeX = e.clientX - containerRect.left - smallCircleOffsetX;
+    const secondRelativeY = e.clientY - containerRect.top - smallCircleOffsetY;
+
+    setIsTransitioning(true);
+    setPosition({
+      x: relativeX,
+      y: relativeY,
+    });
+    setSecondPosition({
+      x: secondRelativeX,
+      y: secondRelativeY,
+    });
   };
 
   const handleTransitionEnd = () => {
