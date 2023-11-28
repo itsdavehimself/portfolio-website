@@ -1,16 +1,38 @@
 h1 {
   font-size: 14rem;
+  margin: 0;
+  line-height: 0.76;
+}
+
+p {
+  margin: 0;
+  font-family: 'Gabarito Regular';
+}
+
+h2 {
+  font-size: 4rem;
+  font-family: 'Gabarito Bold';
+  margin: 0;
 }
 
 .hero {
   display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0f0f0f;
+}
+
+/* .overlay {
+  display: flex;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   background-image: url('https://i.picsum.photos/id/100/2500/1656.jpg?hmac=gWyN-7ZB32rkAjMhKXQgdHOIBRHyTSgzuOK6U0vXb1w');
   background-position: center;
 }
 
-.hero:after {
+.overlay:after {
   content: '';
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png');
   height: 300%;
@@ -18,12 +40,26 @@ h1 {
   position: fixed;
   opacity: 0.05;
   animation: animateGrain 8s steps(10) infinite;
-}
+} */
 
 .container {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+  justify-content: center;
+  padding: 0rem 8rem;
+  height: 48rem;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  padding-bottom: 8rem;
 }
 
 @keyframes animateGrain {
@@ -66,5 +102,6 @@ h1 {
 
 .hero-image {
   border-radius: 2rem;
-  height: 75%;
+  height: 40rem;
+  place-self: center;
 }
