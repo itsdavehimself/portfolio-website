@@ -30,6 +30,11 @@
   mix-blend-mode: difference;
 }
 
+.circle,
+.inside-circle {
+  pointer-events: none;
+}
+
 .transitioning-inside {
   height: 0.8rem;
   width: 0.8rem;
