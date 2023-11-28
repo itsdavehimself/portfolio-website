@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Gabarito Regular';
+  src:
+    local('Gabarito'),
+    url('./fonts/Gabarito/Gabarito-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gabarito Semibold';
+  src:
+    local('Gabarito'),
+    url('./fonts/Gabarito/Gabarito-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gabarito Medium';
+  src:
+    local('Gabarito'),
+    url('./fonts/Gabarito/Gabarito-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gabarito Bold';
+  src:
+    local('Gabarito'),
+    url('./fonts/Gabarito/Gabarito-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gabarito Extrabold';
+  src:
+    local('Gabarito'),
+    url('./fonts/Gabarito/Gabarito-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gabarito Black';
+  src:
+    local('Gabarito'),
+    url('./fonts/Gabarito/Gabarito-Black.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Gabarito Black', sans-serif;
+}
