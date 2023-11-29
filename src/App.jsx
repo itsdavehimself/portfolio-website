@@ -1,16 +1,18 @@
 import './App.css';
 import AboutMe from './components/about-me/AboutMe';
 import HeroSection from './components/hero-section/HeroSection';
-import CircleComponent from './components/circle-component/CircleComponent';
+import { CustomCursorContextProvider } from './context/CustomCursorContext';
+import CustomCursor from './components/custom-cursor/CustomCursor';
 
 function App() {
   return (
-    <CircleComponent>
-      <>
+    <CustomCursorContextProvider>
+      <div className="App">
+        <CustomCursor />
         <HeroSection />
         <AboutMe />
-      </>
-    </CircleComponent>
+      </div>
+    </CustomCursorContextProvider>
   );
 }
 
