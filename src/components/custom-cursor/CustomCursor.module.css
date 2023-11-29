@@ -1,0 +1,36 @@
+.main-cursor,
+.secondary-cursor {
+  z-index: 10000;
+
+  pointer-events: none;
+  overflow: hidden;
+  position: fixed;
+}
+
+.main-cursor {
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.05, 1.2);
+  animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+  mix-blend-mode: difference;
+
+  .main-cursor-background {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: white;
+    border-radius: 50%;
+  }
+}
+
+.secondary-cursor {
+  mix-blend-mode: difference;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.05, 1);
+
+  .cursor-background {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid white;
+    position: relative;
+  }
+}
