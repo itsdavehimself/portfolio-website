@@ -71,7 +71,9 @@ const CustomCursor = () => {
   return (
     <div className={`${styles[type]}`}>
       <div className={styles['main-cursor']} ref={mainCursor}>
-        <div className={styles['main-cursor-background']}></div>
+        <div className={styles['main-cursor-background']}>
+          <div className={styles.greeting}>hey!</div>
+        </div>
       </div>
       <div className={styles['secondary-cursor']} ref={secondaryCursor}>
         <div className={styles['cursor-background']}></div>

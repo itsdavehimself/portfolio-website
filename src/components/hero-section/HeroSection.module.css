@@ -23,7 +23,7 @@ h2 {
   background-color: #0f0f0f;
 }
 
-.overlay {
+/* .overlay {
   display: flex;
   align-items: center;
   width: 100vw;
@@ -42,7 +42,7 @@ h2 {
   opacity: 0.05;
   animation: animateGrain 8s steps(10) infinite;
   pointer-events: none;
-}
+} */
 
 .container {
   display: grid;

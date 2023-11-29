@@ -1,4 +1,13 @@
+* {
+  cursor: none;
+}
+
 body {
   margin: 0;
   color: #efefef;
+  background-color: #0f0f0f;
+}
+
+.app {
+  margin: 0;
 }
