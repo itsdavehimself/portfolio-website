@@ -2,6 +2,7 @@ h1 {
   font-size: 14rem;
   margin: 0;
   line-height: 0.76;
+  font-family: 'Gabarito Black';
 }
 
 p {
@@ -11,15 +12,20 @@ p {
 
 h2 {
   font-size: 4rem;
-  font-family: 'Gabarito Bold';
+  font-family: 'Gabarito Regular';
   margin: 0;
 }
 
-.hero {
+.nav {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.container {
+  display: flex;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   background-color: #0f0f0f;
 }
 
@@ -44,13 +50,21 @@ h2 {
   pointer-events: none;
 } */
 
-.container {
+.hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: center;
   padding: 0rem 8rem;
   height: 48rem;
+  position: fixed;
+}
+
+.hero-container {
+  height: 50%;
+  width: 100vw;
+  display: flex;
+  align-items: center;
 }
 
 .hero-text {
@@ -104,6 +118,6 @@ h2 {
 
 .hero-image {
   border-radius: 2rem;
-  height: 40rem;
+  height: 20rem;
   place-self: center;
 }
