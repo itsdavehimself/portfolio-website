@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const CustomCursorContext = createContext({
   type: 'default',
@@ -13,4 +14,8 @@ export const CustomCursorContextProvider = ({ children }) => {
       {children}
     </CustomCursorContext.Provider>
   );
+};
+
+CustomCursorContextProvider.propTypes = {
+  children: PropTypes.element,
 };
