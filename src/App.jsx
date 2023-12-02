@@ -12,10 +12,10 @@ function App() {
     <CustomCursorContextProvider>
       <div className="App">
         <CustomCursor />
+        <ScrollDown />
         <Navbar />
         <SideDots />
         <HeroSection />
-        <ScrollDown />
         <AboutMe />
       </div>
     </CustomCursorContextProvider>

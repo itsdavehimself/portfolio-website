@@ -1,0 +1,16 @@
+.scroll-down {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  height: 100vh;
+}
+
+.center-dot {
+  position: relative;
+  bottom: 8.8%;
+  left: 50%;
+  height: 0.6rem;
+  width: 0.6rem;
+  background-color: #efefef;
+  border-radius: 50%;
+}
