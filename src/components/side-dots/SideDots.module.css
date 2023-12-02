@@ -19,7 +19,7 @@ aside {
 .side-dot {
   border-radius: 50%;
   /* background-color: #efefef; */
-  border: 2px solid rgba(240, 240, 240, 0.2);
+  border: 2px solid rgba(240, 240, 240, 0.1);
   height: 0.75rem;
   width: 0.75rem;
 }
