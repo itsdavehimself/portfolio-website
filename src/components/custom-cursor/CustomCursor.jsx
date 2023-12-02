@@ -16,18 +16,23 @@ const CustomCursor = () => {
     key: -1,
   });
 
+  let offset;
+  if (type === 'hover-name') {
+    offset = -30;
+  } else {
+    offset = -4;
+  }
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
-      positionRef.current.mouseX =
-        clientX - secondaryCursor.current.clientWidth / 2;
-      positionRef.current.mouseY =
-        clientY - secondaryCursor.current.clientHeight / 2;
+      positionRef.current.mouseX = clientX;
+      positionRef.current.mouseY = clientY;
       positionRef.current.destinationX = positionRef.current.mouseX;
       positionRef.current.destinationY = positionRef.current.mouseY;
       mainCursor.current.style.transform = `translate3d(${
-        positionRef.current.mouseX + 13
-      }px, ${positionRef.current.mouseY + 13}px, 0)`;
+        positionRef.current.mouseX + offset
+      }px, ${positionRef.current.mouseY + offset}px, 0)`;
     };
 
     document.addEventListener('mousemove', handleMouseMove);
@@ -35,7 +40,7 @@ const CustomCursor = () => {
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  }, [offset]);
 
   useEffect(() => {
     const followMouse = () => {
@@ -64,7 +69,9 @@ const CustomCursor = () => {
         positionRef.current.destinationY += distanceY;
       }
 
-      secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
+      secondaryCursor.current.style.transform = `translate3d(${
+        destinationX - 16.5
+      }px, ${destinationY - 16.5}px, 0)`;
     };
 
     followMouse();
