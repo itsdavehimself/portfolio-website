@@ -1,123 +1,66 @@
 h1 {
-  font-size: 16rem;
+  font-size: 12rem;
   margin: 0;
-  line-height: 0.76;
+  line-height: 0.8;
   font-family: 'Gabarito Bold';
 }
 
-p {
-  margin: 0;
-  font-family: 'Gabarito Regular';
-}
-
-h2 {
-  font-size: 4rem;
-  font-family: 'Gabarito Regular';
-  margin: 0;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 1rem 0 1rem;
-}
-
-.container {
-  display: flex;
-  width: 100vw;
-  height: 200vh;
-  background-color: #0f0f0f;
-}
-
-/* .overlay {
-  display: flex;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('https://i.picsum.photos/id/100/2500/1656.jpg?hmac=gWyN-7ZB32rkAjMhKXQgdHOIBRHyTSgzuOK6U0vXb1w');
-  background-position: center;
-  pointer-events: none;
-}
-
-.overlay:after {
-  content: '';
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png');
-  height: 300%;
-  width: 300%;
-  position: fixed;
-  opacity: 0.05;
-  animation: animateGrain 8s steps(10) infinite;
-  pointer-events: none;
-} */
-
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-content: center;
-  padding: 0rem 8rem;
-  height: 48rem;
-  position: fixed;
+.intro-sequence {
+  z-index: 10;
+  overflow: hidden;
+  position: absolute;
 }
 
 .hero-container {
-  height: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 0.3fr;
+  gap: 4rem;
+  margin: 0 10rem 0 4rem;
 }
 
 .hero-text {
   display: flex;
   flex-direction: column;
-  overflow: visible;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullstack {
+  align-self: flex-start;
+  padding-right: 6rem;
+}
+
+.developer {
+  align-self: flex-end;
 }
 
 .tagline {
-  font-size: 1.3rem;
-  padding-bottom: 8rem;
-}
-
-@keyframes animateGrain {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  10% {
-    transform: translate(-5%, -10%);
-  }
-  20% {
-    transform: translate(-15%, -20%);
-  }
-  30% {
-    transform: translate(-5%, -10%);
-  }
-  40% {
-    transform: translate(-15%, -20%);
-  }
-
-  50% {
-    transform: translate(-5%, -10%);
-  }
-  60% {
-    transform: translate(-15%, -20%);
-  }
-  70% {
-    transform: translate(-5%, -10%);
-  }
-  80% {
-    transform: translate(-15%, -20%);
-  }
-  90% {
-    transform: translate(-5%, -10%);
-  }
-  100% {
-    transform: translate(-15%, -20%);
-  }
+  margin: 0;
+  font-size: 1.4rem;
+  font-family: 'Gabarito Regular';
+  align-self: flex-end;
 }
 
 .hero-image {
   border-radius: 2rem;
-  height: 20rem;
-  place-self: center;
+  height: 24rem;
+  justify-self: center;
+  align-self: center;
 }

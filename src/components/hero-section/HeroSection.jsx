@@ -1,66 +1,50 @@
-// import headshot from '../../assets/headshot.png';
 import headshotColor from '../../assets/headshot-color.jpg';
 import styles from './HeroSection.module.css';
-import { useContext, useEffect } from 'react';
-import { CustomCursorContext } from '../../context/CustomCursorContext';
-import { scroll, motion } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import IntroSequence from '../intro-sequence/IntroSequence';
 
 export default function HeroSection() {
-  const { setType } = useContext(CustomCursorContext);
+  const customEase = [0.16, 0.5, 0.2, 1];
 
-  const heroDivRef = useRef(null);
-
-  // useEffect(() => {
-  //   const heroDiv = heroDivRef.current;
-  //   scroll((progress) => {
-  //     heroDiv.style.opacity = `${1 - progress}`;
-  //     heroDiv.style.scale = `${1 - progress}`;
-
-  //     if (Math.abs(progress - 1) < 0.01) {
-  //       heroDiv.style.display = 'none';
-  //     } else if (Math.abs(progress - 1) > 0.01) {
-  //       heroDiv.style.display = 'grid';
-  //     }
-  //   });
-  // }, [heroDivRef]);
-
-  const handleHoverName = () => {
-    setType('hover-name');
+  const introDiv = {
+    visible: {
+      y: '-100%',
+      transition: {
+        delay: 4.5,
+        duration: 0.75,
+        ease: customEase,
+      },
+    },
+    hidden: { y: 0 },
   };
-
-  const handleHoverNameLeave = () => {
-    setType('default');
-  };
-
-  const customEase = [0.16, 0.73, 0, 1];
 
   return (
-    <main className={styles.container}>
-      <motion.div
-        className={styles['wipe-away']}
-        initial={{ y: '0%' }}
-        animate={{ y: '-100%' }}
-        transition={{ delay: 1000, duration: 1.5, ease: customEase }}
-      ></motion.div>
-      <div className={styles['hero-container']}>
-        <section className={styles.hero} ref={heroDivRef}>
-          <div className={styles['hero-text']}>
-            <p className={styles.tagline}>
-              Over the last 10 years, I&apos;ve been weaving a web of skills by
-              collecting and connecting dots…
-            </p>
-            <h1
-              onMouseEnter={handleHoverName}
-              onMouseLeave={handleHoverNameLeave}
-            >
-              DAVID SMOLEN
-            </h1>
-            <h2>FULL-STACK DEVELOPER</h2>
-          </div>
-          <img className={styles['hero-image']} src={headshotColor} />
-        </section>
-      </div>
+    <main className={styles['hero-container']}>
+      <motion.section
+        className={styles['intro-sequence']}
+        initial="hidden"
+        animate="visible"
+        variants={introDiv}
+      >
+        <IntroSequence />
+      </motion.section>
+      <section className={styles.hero}>
+        <div className={styles['hero-text']}>
+          <h1 className={styles.title}>
+            <div className={styles.fullstack}>FULL-STACK</div>
+            <div className={styles.developer}>DEVELOPER</div>
+          </h1>
+          <p className={styles.tagline}>
+            Over the last 13 years, I&apos;ve been weaving a web of skills by
+            collecting and connecting dots...
+          </p>
+        </div>
+        <img
+          className={styles['hero-image']}
+          src={headshotColor}
+          alt="David Smolen"
+        ></img>
+      </section>
     </main>
   );
 }
