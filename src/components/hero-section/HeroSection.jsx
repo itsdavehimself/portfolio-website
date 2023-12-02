@@ -35,8 +35,7 @@ export default function HeroSection() {
             <div className={styles.developer}>DEVELOPER</div>
           </h1>
           <p className={styles.tagline}>
-            Over the last 13 years, I&apos;ve been weaving a web of skills by
-            collecting and connecting dots...
+            Weaving a web of skills by collecting and connecting dots . . .
           </p>
         </div>
         <img
