@@ -12,8 +12,6 @@ function App() {
     <CustomCursorContextProvider>
       <div className="App">
         <CustomCursor />
-        <ScrollDown />
-        <Navbar />
         <SideDots />
         <HeroSection />
         <AboutMe />

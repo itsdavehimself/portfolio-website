@@ -1,14 +1,14 @@
 .scroll-down {
   display: flex;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  height: 100vh;
+  bottom: 0;
+  left: 0;
 }
 
 .center-dot {
-  position: relative;
-  bottom: 8.8%;
-  left: 50%;
+  position: absolute;
   height: 0.6rem;
   width: 0.6rem;
   background-color: #efefef;
