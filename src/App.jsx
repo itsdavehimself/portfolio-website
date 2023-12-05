@@ -23,7 +23,7 @@ function App() {
       <div className="App">
         <CustomCursor />
         <SideDots scrollPosition={scrollPosition} />
-        <HeroSection />
+        <HeroSection scrollPosition={scrollPosition} />
         <AboutMe />
         <Work />
         <Skills />

@@ -1,11 +1,13 @@
 import headshotColor from '../../assets/headshot-color.jpg';
 import styles from './HeroSection.module.css';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import IntroSequence from '../../components/intro-sequence/IntroSequence';
 import ScrollDown from '../../components/scroll-down/ScrollDown';
 import Navbar from '../../components/navbar/Navbar';
+import PropTypes from 'prop-types';
 
-export default function HeroSection() {
+export default function HeroSection({ scrollPosition }) {
   const customEase = [0.16, 0.5, 0.2, 1];
 
   const tagline =
@@ -137,7 +139,10 @@ export default function HeroSection() {
   };
 
   return (
-    <main className={styles['hero-container']}>
+    <motion.main
+      className={styles['hero-container']}
+      style={{ opacity: 1 - scrollPosition / 950 }}
+    >
       <motion.section
         className={styles['intro-sequence']}
         initial="hidden"
@@ -208,6 +213,10 @@ export default function HeroSection() {
           ></img>
         </motion.div>
       </section>
-    </main>
+    </motion.main>
   );
 }
+
+HeroSection.propTypes = {
+  scrollPosition: PropTypes.number,
+};
