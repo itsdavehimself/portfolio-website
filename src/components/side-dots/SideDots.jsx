@@ -1,9 +1,10 @@
 import styles from './SideDots.module.css';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function SideDots({ scrollPosition }) {
+  const [isVisible, setIsVisible] = useState(false);
   const [lineHeight, setLineHeight] = useState(0);
   const [secondDotProperties, setSecondDotProperties] = useState({
     color: 'rgba(15, 15, 15, 0)',
@@ -29,6 +30,12 @@ export default function SideDots({ scrollPosition }) {
   });
 
   useEffect(() => {
+    setIsVisible(true);
+
+    const timeoutId = setTimeout(() => {
+      setIsVisible(false);
+    }, 1000);
+
     if (scrollPosition < 1000) {
       setLineHeight(0);
       setSecondDotProperties({
@@ -87,71 +94,83 @@ export default function SideDots({ scrollPosition }) {
         width: '0.85rem',
       });
     }
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [scrollPosition]);
 
   return (
-    <aside>
-      <div className={styles['side-dots']}>
-        <motion.div
-          style={{
-            position: 'absolute',
-            height: lineHeight,
-            width: 2,
-            backgroundColor: 'rgb(239, 239, 239)',
-            transition: 'height 1s ease-out',
-          }}
-        ></motion.div>
-        <div className={styles['side-dot-filled']}></div>
-        <div className={styles.dot}>
-          <div
-            style={{
-              borderRadius: '50%',
-              backgroundColor: secondDotProperties.color,
-              height: secondDotProperties.height,
-              width: secondDotProperties.width,
-              transition:
-                'background 0.3s ease-out 0.1s, height 0.3s ease-out 0.2s, width 0.3s ease-out 0.2s',
-            }}
-          ></div>
-        </div>
-        <div className={styles.dot}>
-          <div
-            style={{
-              borderRadius: '50%',
-              backgroundColor: thirdDotProperties.color,
-              height: thirdDotProperties.height,
-              width: thirdDotProperties.width,
-              transition:
-                'background 0.3s ease-out 0.1s, height 0.3s ease-out 0.2s, width 0.3s ease-out 0.2s',
-            }}
-          ></div>
-        </div>
-        <div className={styles.dot}>
-          <div
-            style={{
-              borderRadius: '50%',
-              backgroundColor: fourthDotProperties.color,
-              height: fourthDotProperties.height,
-              width: fourthDotProperties.width,
-              transition:
-                'background 0.3s ease-out 0.1s, height 0.3s ease-out 0.2s, width 0.3s ease-out 0.2s',
-            }}
-          ></div>
-        </div>
-        <div className={styles.dot}>
-          <div
-            style={{
-              borderRadius: '50%',
-              backgroundColor: fifthDotProperties.color,
-              height: fifthDotProperties.height,
-              width: fifthDotProperties.width,
-              transition:
-                'background 0.3s ease-out 0.1s, height 0.3s ease-out 0.2s, width 0.3s ease-out 0.2s',
-            }}
-          ></div>
-        </div>
-      </div>
-    </aside>
+    <AnimatePresence>
+      {isVisible && (
+        <motion.aside
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+        >
+          <div className={styles['side-dots']}>
+            <motion.div
+              style={{
+                position: 'absolute',
+                height: lineHeight,
+                width: 2,
+                backgroundColor: 'rgb(239, 239, 239)',
+                transition: 'height 1s ease-out',
+              }}
+            ></motion.div>
+            <div className={styles['side-dot-filled']}></div>
+            <div className={styles.dot}>
+              <div
+                style={{
+                  borderRadius: '50%',
+                  backgroundColor: secondDotProperties.color,
+                  height: secondDotProperties.height,
+                  width: secondDotProperties.width,
+                  transition:
+                    'background 0.3s ease-out 0.1s, height 0.3s ease-out 0.2s, width 0.3s ease-out 0.2s',
+                }}
+              ></div>
+            </div>
+            <div className={styles.dot}>
+              <div
+                style={{
+                  borderRadius: '50%',
+                  backgroundColor: thirdDotProperties.color,
+                  height: thirdDotProperties.height,
+                  width: thirdDotProperties.width,
+                  transition:
+                    'background 0.3s ease-out 0.1s, height 0.3s ease-out 0.2s, width 0.3s ease-out 0.2s',
+                }}
+              ></div>
+            </div>
+            <div className={styles.dot}>
+              <div
+                style={{
+                  borderRadius: '50%',
+                  backgroundColor: fourthDotProperties.color,
+                  height: fourthDotProperties.height,
+                  width: fourthDotProperties.width,
+                  transition:
+                    'background 0.3s ease-out 0.1s, height 0.3s ease-out 0.2s, width 0.3s ease-out 0.2s',
+                }}
+              ></div>
+            </div>
+            <div className={styles.dot}>
+              <div
+                style={{
+                  borderRadius: '50%',
+                  backgroundColor: fifthDotProperties.color,
+                  height: fifthDotProperties.height,
+                  width: fifthDotProperties.width,
+                  transition:
+                    'background 0.3s ease-out 0.1s, height 0.3s ease-out 0.2s, width 0.3s ease-out 0.2s',
+                }}
+              ></div>
+            </div>
+          </div>
+        </motion.aside>
+      )}
+    </AnimatePresence>
   );
 }
 
