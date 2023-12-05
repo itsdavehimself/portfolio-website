@@ -27,10 +27,11 @@ h3 {
   font-size: 0.8rem;
   background-color: transparent;
   color: #efefef;
-  transition-property: font-stretch, background-color, font-size, font-weight;
+  transition-property: font-stretch, background-color, font-size, font-weight,
+    letter-spacing;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-  font-stretch: ultra-expanded;
+  font-stretch: expanded;
   width: 8.5rem;
   height: 3rem;
 }
