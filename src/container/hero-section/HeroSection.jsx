@@ -8,6 +8,98 @@ import Navbar from '../../components/navbar/Navbar';
 export default function HeroSection() {
   const customEase = [0.16, 0.5, 0.2, 1];
 
+  const tagline =
+    'Weaving a web of skills by collecting and connecting dots...';
+  const fullstack = 'FULL-STACK';
+  const developer = 'DEVELOPER';
+
+  const fullstackVariant = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.01,
+        delay: 4.35,
+        ease: customEase,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+        ease: customEase,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+        staggerChildren: 0.01,
+        ease: customEase,
+      },
+    },
+  };
+
+  const developerVariant = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.01,
+        delay: 4.35,
+        ease: customEase,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+        ease: customEase,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+        staggerChildren: 0.01,
+        ease: customEase,
+      },
+    },
+  };
+
+  const taglineVariant = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.01,
+        delay: 4.3,
+        ease: customEase,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+        ease: customEase,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+        staggerChildren: 0.01,
+        ease: customEase,
+      },
+    },
+  };
+
+  const letterVariant = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 5 },
+    exit: { opacity: 0, y: -5 },
+  };
+
   const introDiv = {
     visible: {
       y: '-100%',
@@ -20,6 +112,30 @@ export default function HeroSection() {
     hidden: { y: 0 },
   };
 
+  const scrollComponent = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { delay: 4.5, duration: 0.75, ease: customEase },
+        opacity: { delay: 4.55, duration: 0.75, ease: customEase },
+      },
+    },
+    hidden: { opacity: 0, y: 50 },
+  };
+
+  const imageComponent = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { delay: 4.55, duration: 0.75, ease: customEase },
+        opacity: { delay: 4.6, duration: 0.75, ease: customEase },
+      },
+    },
+    hidden: { opacity: 0, y: 50 },
+  };
+
   return (
     <main className={styles['hero-container']}>
       <motion.section
@@ -30,23 +146,67 @@ export default function HeroSection() {
       >
         <IntroSequence />
       </motion.section>
-      <ScrollDown />
+      <motion.div
+        className={styles['scroll-component']}
+        initial="hidden"
+        animate="visible"
+        variants={scrollComponent}
+      >
+        <ScrollDown />
+      </motion.div>
       <Navbar />
       <section className={styles.hero}>
         <div className={styles['hero-text']}>
           <h1 className={styles.title}>
-            <div className={styles.fullstack}>FULL-STACK</div>
-            <div className={styles.developer}>DEVELOPER</div>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fullstackVariant}
+              className={styles.fullstack}
+            >
+              {fullstack.split('').map((letter, index) => (
+                <motion.span key={index} variants={letterVariant}>
+                  {letter}
+                </motion.span>
+              ))}
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={developerVariant}
+              className={styles.developer}
+            >
+              {developer.split('').map((letter, index) => (
+                <motion.span key={index} variants={letterVariant}>
+                  {letter}
+                </motion.span>
+              ))}
+            </motion.div>
           </h1>
-          <p className={styles.tagline}>
-            Weaving a web of skills by collecting and connecting dots...
-          </p>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={taglineVariant}
+            className={styles.tagline}
+          >
+            {tagline.split(' ').map((word, index) => (
+              <motion.span key={index} variants={letterVariant}>
+                {word} <motion.span></motion.span>
+              </motion.span>
+            ))}
+          </motion.div>
         </div>
-        <img
-          className={styles['hero-image']}
-          src={headshotColor}
-          alt="David Smolen"
-        ></img>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={imageComponent}
+        >
+          <img
+            className={styles['hero-image']}
+            src={headshotColor}
+            alt="David Smolen"
+          ></img>
+        </motion.div>
       </section>
     </main>
   );

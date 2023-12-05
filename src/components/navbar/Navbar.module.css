@@ -13,19 +13,20 @@ h3 {
   font-family: 'Gabarito Regular';
   margin: 0;
   padding-left: 2rem;
+  color: #efefef;
 }
 
 .nav-btns {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
   padding-right: 2rem;
 }
 
 .nav-btn {
   border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  background-color: #0f0f0f;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: transparent;
   color: #efefef;
+  margin-right: 1rem;
 }

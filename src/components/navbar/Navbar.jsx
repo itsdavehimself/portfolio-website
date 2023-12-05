@@ -1,9 +1,12 @@
 import styles from './Navbar.module.css';
 import { useContext } from 'react';
+import { motion } from 'framer-motion';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
 
 export default function Navbar() {
   const { setType } = useContext(CustomCursorContext);
+  const customEase = [0.16, 0.5, 0.2, 1];
+  const buttonNames = ['HOME', 'ABOUT', 'WORK', 'DOTS', 'CONTACT'];
 
   const handleHoverName = () => {
     setType('hover-name');
@@ -13,19 +16,79 @@ export default function Navbar() {
     setType('default');
   };
 
+  const nameVariant = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        y: { delay: 4.85, duration: 0.75, ease: customEase },
+        opacity: { delay: 4.85, duration: 0.75, ease: customEase },
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+  };
+
+  const navVariant = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.01,
+        delay: 4.7,
+        ease: customEase,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+        ease: customEase,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+        staggerChildren: 0.01,
+        ease: customEase,
+      },
+    },
+  };
+
+  const buttonVariant = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 5 },
+    exit: { opacity: 0, y: -5 },
+  };
+
   return (
     <nav>
       <div>
-        <h3 onMouseEnter={handleHoverName} onMouseLeave={handleHoverNameLeave}>
+        <motion.h3
+          onMouseEnter={handleHoverName}
+          onMouseLeave={handleHoverNameLeave}
+          initial="hidden"
+          animate="visible"
+          variants={nameVariant}
+        >
           DAVID SMOLEN
-        </h3>
+        </motion.h3>
       </div>
       <div className={styles['nav-btns']}>
-        <button className={styles['nav-btn']}>HOME</button>
-        <button className={styles['nav-btn']}>ABOUT</button>
-        <button className={styles['nav-btn']}>WORK</button>
-        <button className={styles['nav-btn']}>DOTS</button>
-        <button className={styles['nav-btn']}>CONTACT</button>
+        <motion.div initial="hidden" animate="visible" variants={navVariant}>
+          {buttonNames.map((buttonName, index) => (
+            <motion.button
+              key={index}
+              className={styles['nav-btn']}
+              variants={buttonVariant}
+            >
+              {buttonName}
+            </motion.button>
+          ))}
+        </motion.div>
       </div>
     </nav>
   );
