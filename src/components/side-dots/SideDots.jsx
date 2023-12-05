@@ -12,20 +12,20 @@ export default function SideDots({ scrollPosition }) {
   });
   const [thirdDotProperties, setThirdDotProperties] = useState({
     color: 'rgba(15, 15, 15, 0)',
-    height: '0.85rem',
-    width: '0.85rem',
+    height: '0rem',
+    width: '0rem',
   });
 
   const [fourthDotProperties, setFourthDotProperties] = useState({
     color: 'rgba(15, 15, 15, 0)',
-    height: '0.85rem',
-    width: '0.85rem',
+    height: '0rem',
+    width: '0rem',
   });
 
   const [fifthDotProperties, setFifthDotProperties] = useState({
     color: 'rgba(15, 15, 15, 0)',
-    height: '0.85rem',
-    width: '0.85rem',
+    height: '0rem',
+    width: '0rem',
   });
 
   useEffect(() => {
