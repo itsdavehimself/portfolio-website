@@ -8,7 +8,8 @@ export default function IntroSequence() {
   const [isOpenQuoteVisible, setIsOpenQuoteVisible] = useState(true);
   const [isCloseQuoteVisible, setIsCloseQuoteVisible] = useState(true);
 
-  const sentence = `You have to trust that the dots will somehow connect in your future.`;
+  const sentence =
+    'You have to trust that the dots will somehow connect in your future.';
 
   const sentenceVariant = {
     visible: {
@@ -55,7 +56,7 @@ export default function IntroSequence() {
       ],
       [
         '.open-quotes',
-        { x: '-23rem', opacity: 0.15, scale: 0.5 },
+        { x: '-23.3rem', opacity: 0.15, scale: 0.5 },
         { delay: 0.05, duration: 0.15, ease: customEase },
       ],
     ];
