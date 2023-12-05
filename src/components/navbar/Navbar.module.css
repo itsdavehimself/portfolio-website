@@ -31,8 +31,8 @@ h3 {
     letter-spacing;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-  font-stretch: expanded;
-  width: 8.5rem;
+  font-stretch: semi-expanded;
+  width: 7rem;
   height: 3rem;
 }
 
