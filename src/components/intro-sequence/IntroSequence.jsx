@@ -50,7 +50,7 @@ export default function IntroSequence() {
       ],
       [
         '.open-quotes',
-        { y: '-2.5rem' },
+        { y: '-1rem' },
         { delay: 0.05, duration: 0.1, ease: customEase },
       ],
       [
@@ -68,7 +68,7 @@ export default function IntroSequence() {
       ],
       [
         '.close-quotes',
-        { y: '2.5rem' },
+        { y: '1rem' },
         { delay: 0.05, duration: 0.1, ease: customEase },
       ],
 
