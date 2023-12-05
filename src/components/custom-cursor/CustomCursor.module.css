@@ -52,6 +52,27 @@
   }
 }
 
+.nav-hover {
+  .main-cursor {
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    mix-blend-mode: difference;
+  }
+
+  .main-cursor-background {
+    animation: scaleUpNav 0.4s cubic-bezier(0.23, 1, 0.05, 1.2) 0s forwards;
+  }
+
+  .secondary-cursor {
+    animation: fadeOut 0.1s cubic-bezier(0.23, 1, 0.05, 1.2) 0s forwards;
+  }
+
+  .greeting {
+    display: none;
+  }
+}
+
 .greeting {
   display: flex;
   justify-content: center;
@@ -77,15 +98,21 @@
   }
 }
 
+@keyframes scaleUpNav {
+  from {
+    background: #efefef;
+  }
+
+  to {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
 @keyframes scaleDown {
   from {
     height: 4rem;
     width: 4rem;
-    background: linear-gradient(
-      90deg,
-      rgba(148, 165, 196, 1),
-      rgba(220, 108, 95, 1)
-    );
   }
 
   to {

@@ -17,7 +17,7 @@ const CustomCursor = () => {
   });
 
   let offset;
-  if (type === 'hover-name') {
+  if (type === 'hover-name' || type === 'nav-hover') {
     offset = -30;
   } else {
     offset = -4;
