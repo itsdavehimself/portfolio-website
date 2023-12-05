@@ -17,16 +17,27 @@ h3 {
 }
 
 .nav-btns {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   padding-right: 2rem;
 }
 
 .nav-btn {
   border: none;
-  padding: 1rem 1.5rem;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   background-color: transparent;
   color: #efefef;
-  margin-right: 1rem;
+  transition-property: font-stretch, background-color, font-size, font-weight;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  font-stretch: ultra-expanded;
+  width: 8.5rem;
+  height: 3rem;
+}
+
+.nav-btn:hover {
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
 }

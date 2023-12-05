@@ -16,6 +16,14 @@ export default function Navbar() {
     setType('default');
   };
 
+  const handleNavBtnHover = () => {
+    setType('nav-hover');
+  };
+
+  const handleNavBtnHoverLeave = () => {
+    setType('default');
+  };
+
   const nameVariant = {
     visible: {
       opacity: 1,
@@ -77,19 +85,21 @@ export default function Navbar() {
           DAVID SMOLEN
         </motion.h3>
       </div>
-      <div className={styles['nav-btns']}>
-        <motion.div initial="hidden" animate="visible" variants={navVariant}>
+      <motion.div initial="hidden" animate="visible" variants={navVariant}>
+        <div className={styles['nav-btns']}>
           {buttonNames.map((buttonName, index) => (
             <motion.button
               key={index}
               className={styles['nav-btn']}
               variants={buttonVariant}
+              onMouseEnter={handleNavBtnHover}
+              onMouseLeave={handleNavBtnHoverLeave}
             >
               {buttonName}
             </motion.button>
           ))}
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </nav>
   );
 }
