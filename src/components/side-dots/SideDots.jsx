@@ -34,7 +34,7 @@ export default function SideDots({ scrollPosition }) {
 
     const timeoutId = setTimeout(() => {
       setIsVisible(false);
-    }, 750);
+    }, 1000);
 
     if (scrollPosition < 1000) {
       setLineHeight(0);
