@@ -16,18 +16,17 @@ aside {
   height: 25%;
 }
 
-.side-dot-empty {
-  border-radius: 50%;
-  /* background-color: #efefef; */
-  border: 2px solid rgba(240, 240, 240, 0.1);
-  height: 0.75rem;
-  width: 0.75rem;
+.dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0.85rem;
+  width: 0.85rem;
 }
 
 .side-dot-filled {
   border-radius: 50%;
   background-color: #efefef;
-  border: 2px solid rgba(240, 240, 240, 1);
-  height: 0.75rem;
-  width: 0.75rem;
+  height: 0.85rem;
+  width: 0.85rem;
 }
