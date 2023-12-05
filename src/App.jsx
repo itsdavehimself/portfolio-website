@@ -6,7 +6,7 @@ import CustomCursor from './components/custom-cursor/CustomCursor';
 import HeroSection from './container/hero-section/HeroSection';
 import AboutMe from './container/about-me/AboutMe';
 import SideDots from './components/side-dots/SideDots';
-import Work from './container/work/Work';
+import Projects from './container/projects/Projects';
 import Skills from './container/skills/Skills';
 import ContactMe from './container/contact-me/ContactMe';
 
@@ -24,8 +24,8 @@ function App() {
         <CustomCursor />
         <SideDots scrollPosition={scrollPosition} />
         <HeroSection scrollPosition={scrollPosition} />
-        <AboutMe />
-        <Work />
+        <AboutMe scrollPosition={scrollPosition} />
+        <Projects />
         <Skills />
         <ContactMe />
       </div>

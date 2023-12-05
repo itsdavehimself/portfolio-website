@@ -42,3 +42,7 @@ h3 {
   font-size: 0.9rem;
   transition: all 0.2s ease-in-out;
 }
+
+.nav-btn:active {
+  letter-spacing: 0;
+}

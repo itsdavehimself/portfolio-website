@@ -6,7 +6,7 @@ import { CustomCursorContext } from '../../context/CustomCursorContext';
 export default function Navbar() {
   const { setType } = useContext(CustomCursorContext);
   const customEase = [0.16, 0.5, 0.2, 1];
-  const buttonNames = ['HOME', 'ABOUT', 'WORK', 'DOTS', 'CONTACT'];
+  const buttonNames = ['HOME', 'ABOUT', 'PROJECTS', 'DOTS', 'CONTACT'];
 
   const handleHoverName = () => {
     setType('hover-name');
