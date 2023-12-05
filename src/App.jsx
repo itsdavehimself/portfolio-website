@@ -1,9 +1,12 @@
 import './App.css';
 import { CustomCursorContextProvider } from './context/CustomCursorContext';
 import CustomCursor from './components/custom-cursor/CustomCursor';
-import HeroSection from './components/hero-section/HeroSection';
-import AboutMe from './components/about-me/AboutMe';
+import HeroSection from './container/hero-section/HeroSection';
+import AboutMe from './container/about-me/AboutMe';
 import SideDots from './components/side-dots/SideDots';
+import Work from './container/work/Work';
+import Skills from './container/skills/Skills';
+import ContactMe from './container/contact-me/ContactMe';
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
         <SideDots />
         <HeroSection />
         <AboutMe />
+        <Work />
+        <Skills />
+        <ContactMe />
       </div>
     </CustomCursorContextProvider>
   );

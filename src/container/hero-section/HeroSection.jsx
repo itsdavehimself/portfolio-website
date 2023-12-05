@@ -1,9 +1,9 @@
 import headshotColor from '../../assets/headshot-color.jpg';
 import styles from './HeroSection.module.css';
 import { motion } from 'framer-motion';
-import IntroSequence from '../intro-sequence/IntroSequence';
-import ScrollDown from '../scroll-down/ScrollDown';
-import Navbar from '../navbar/Navbar';
+import IntroSequence from '../../components/intro-sequence/IntroSequence';
+import ScrollDown from '../../components/scroll-down/ScrollDown';
+import Navbar from '../../components/navbar/Navbar';
 
 export default function HeroSection() {
   const customEase = [0.16, 0.5, 0.2, 1];
