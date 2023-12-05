@@ -19,7 +19,7 @@ export default function HeroSection() {
       transition: {
         when: 'beforeChildren',
         staggerChildren: 0.01,
-        delay: 4.35,
+        delay: 4.375,
         ease: customEase,
       },
     },
@@ -46,7 +46,7 @@ export default function HeroSection() {
       transition: {
         when: 'beforeChildren',
         staggerChildren: 0.01,
-        delay: 4.35,
+        delay: 4.375,
         ease: customEase,
       },
     },
