@@ -50,6 +50,15 @@
   .secondary-cursor {
     animation: fadeOut 0.1s cubic-bezier(0.23, 1, 0.05, 1.2) 0s forwards;
   }
+
+  .greeting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.8rem;
+    font-family: 'Gabarito Regular';
+    font-size: 2rem;
+  }
 }
 
 .nav-hover {
@@ -74,12 +83,7 @@
 }
 
 .greeting {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 0.8rem;
-  font-family: 'Gabarito Regular';
-  font-size: 2rem;
+  display: none;
 }
 
 @keyframes scaleUp {
