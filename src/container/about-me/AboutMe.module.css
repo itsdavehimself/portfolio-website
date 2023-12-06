@@ -12,7 +12,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 16.5rem;
+  padding-top: 16.8rem;
   width: 8rem;
 }
 
@@ -37,14 +37,17 @@ h2 {
 .about-me {
   display: grid;
   grid-template-columns: 1fr 0.7fr;
-  padding-right: 10rem;
+  padding-right: 11rem;
   margin-top: -5rem;
   height: 50%;
   p {
-    font-size: 1rem;
-    line-height: 1.3;
+    font-size: 1.1rem;
     font-family: 'NunitoSans ExtraLight';
   }
+}
+
+.about-me-emphasis {
+  font-family: 'NunitoSans Bold';
 }
 
 .about-me-paragraph {

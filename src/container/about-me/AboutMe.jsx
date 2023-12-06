@@ -16,29 +16,61 @@ export default function AboutMe({ scrollPosition }) {
         <div className={styles['about-me']}>
           <div className={styles['about-me-paragraph']}>
             <p>
-              Hey there, I&apos;m David—a perpetual self-learner and full-stack
-              developer with a passion for discovering the latest web
-              technologies and crafting captivating digital experiences.
-            </p>
-            <p>
-              With a B.A. in Psychology, I enjoy approaching web development
-              from the end-users&apos; perspective, merging my technical skill
-              set with an understanding of human behavior to create experiences
-              that resonate and elevate user satisfaction.
-            </p>
-            <p>
-              My curiosity extends beyond web development into realms such as 3D
-              modeling/animation, video editing, and sound design. As our
-              digital worlds continue to expand, I look forward to connecting
-              these skills and designing effective and memorable online
+              Hey there, I&apos;m David—
+              <span className={styles['about-me-emphasis']}>
+                a perpetual self-learner{' '}
+              </span>
+              and{' '}
+              <span className={styles['about-me-emphasis']}>
+                full-stack developer
+              </span>{' '}
+              with a{' '}
+              <span className={styles['about-me-emphasis']}>
+                passion for discovering
+              </span>{' '}
+              the latest web technologies and crafting captivating digital
               experiences.
             </p>
             <p>
-              With seven years of experience in sales and management roles
-              throughout my professional journey, I&apos;m excited to evolve
-              into a new phase of my adventure. I&apos;m eager to join and
-              collaborate with passionate teams, and to leverage my diverse
-              skill set in the creation of meaningful projects.
+              <span className={styles['about-me-emphasis']}>
+                With a B.A. in Psychology
+              </span>
+              , I enjoy approaching web development from the end-users&apos;
+              perspective, merging my technical skill set with an understanding
+              of human behavior to create{' '}
+              <span className={styles['about-me-emphasis']}>
+                experiences that resonate
+              </span>{' '}
+              and elevate user satisfaction.
+            </p>
+            <p>
+              <span className={styles['about-me-emphasis']}>
+                My curiosity extends beyond web development
+              </span>{' '}
+              into realms such as 3D modeling/animation, video editing, and
+              sound design. As our digital worlds continue to expand, I look
+              forward to{' '}
+              <span className={styles['about-me-emphasis']}>
+                connecting these skills
+              </span>{' '}
+              and designing effective and memorable online experiences.
+            </p>
+            <p>
+              With{' '}
+              <span className={styles['about-me-emphasis']}>
+                seven years of experience in sales
+              </span>{' '}
+              and management roles throughout my professional journey, I&apos;m
+              excited to{' '}
+              <span className={styles['about-me-emphasis']}>
+                evolve into a new phase
+              </span>{' '}
+              of my adventure. I&apos;m{' '}
+              <span className={styles['about-me-emphasis']}>
+                eager to join and collaborate
+              </span>{' '}
+              with passionate teams, and to leverage my diverse skill set in the
+              creation of meaningful projects.
             </p>
           </div>
         </div>
