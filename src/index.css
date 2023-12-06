@@ -1,73 +1,45 @@
 @font-face {
-  font-family: 'NunitoSans Thin';
+  font-family: 'Avenir Light';
   src:
-    local('NunitoSans'),
-    url('./fonts/NunitoSans/NunitoSans-Thin.ttf') format('truetype');
+    local('Avenir'),
+    url('./fonts/Avenir/Avenir-Light.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'NunitoSans ExtraLight';
+  font-family: 'Avenir Book';
   src:
-    local('NunitoSans'),
-    url('./fonts/NunitoSans/NunitoSans-ExtraLight.ttf') format('truetype');
+    local('Avenir'),
+    url('./fonts/Avenir/Avenir-Book.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'NunitoSans Light';
+  font-family: 'Avenir Roman';
   src:
-    local('NunitoSans'),
-    url('./fonts/NunitoSans/NunitoSans-Light.ttf') format('truetype');
+    local('Avenir'),
+    url('./fonts/Avenir/Avenir-Roman.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'NunitoSans Regular';
+  font-family: 'Avenir Medium';
   src:
-    local('NunitoSans'),
-    url('./fonts/NunitoSans/NunitoSans-Regular.ttf') format('truetype');
+    local('Avenir'),
+    url('./fonts/Avenir/Avenir-Medium.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'NunitoSans Medium';
+  font-family: 'Avenir Black';
   src:
-    local('NunitoSans'),
-    url('./fonts/NunitoSans/NunitoSans-Medium.ttf') format('truetype');
+    local('Avenir'),
+    url('./fonts/Avenir/Avenir-Black.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'NunitoSans Medium';
+  font-family: 'Avenir Heavy';
   src:
-    local('NunitoSans'),
-    url('./fonts/NunitoSans/NunitoSans-Medium.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'NunitoSans SemiBold';
-  src:
-    local('NunitoSans'),
-    url('./fonts/NunitoSans/NunitoSans-SemiBold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'NunitoSans Bold';
-  src:
-    local('NunitoSans'),
-    url('./fonts/NunitoSans/NunitoSans-Bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'NunitoSans ExtraBold';
-  src:
-    local('NunitoSans'),
-    url('./fonts/NunitoSans/NunitoSans-ExtraBold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'NunitoSans Black';
-  src:
-    local('NunitoSans'),
-    url('./fonts/NunitoSans/NunitoSans-Black.ttf') format('truetype');
+    local('Avenir'),
+    url('./fonts/Avenir/Avenir-Heavy.otf') format('opentype');
 }
 
 body {
-  font-family: 'NunitoSans Regular', sans-serif;
+  font-family: 'Avenir Light';
 }

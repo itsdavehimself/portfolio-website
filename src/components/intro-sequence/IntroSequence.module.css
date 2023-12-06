@@ -30,7 +30,8 @@
   span {
     display: inline-block;
     font-size: 1.4rem;
-    font-family: 'NunitoSans SemiBold';
+    font-family: 'Avenir';
+    font-weight: 600;
     color: #0f0f0f;
   }
 }
