@@ -1,0 +1,14 @@
+.about-me-sidebar {
+  display: flex;
+  transform: rotate(-90deg);
+  height: 1rem;
+  span {
+    color: #efefef;
+    font-size: 1.4rem;
+    font-family: 'Gabarito Regular';
+  }
+}
+
+#about {
+  padding-right: 20rem;
+}
