@@ -9,8 +9,7 @@ import PropTypes from 'prop-types';
 export default function HeroSection({ scrollPosition }) {
   const customEase = [0.16, 0.5, 0.2, 1];
 
-  const tagline =
-    'Weaving a web of skills by collecting and connecting dots...';
+  const tagline = 'Weaving a web of skills by collecting and connecting dots';
   const fullstack = 'FULL-STACK';
   const developer = 'DEVELOPER';
 
