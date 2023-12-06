@@ -104,6 +104,7 @@ export default function SideDots({ scrollPosition }) {
     <AnimatePresence>
       {isVisible && (
         <motion.aside
+          className={styles['side-dot-animation']}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
