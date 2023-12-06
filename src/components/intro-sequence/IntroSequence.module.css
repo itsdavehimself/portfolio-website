@@ -25,13 +25,12 @@
   top: 3rem;
 }
 
-span {
-  display: inline-block;
-  font-size: 1.6rem;
-  font-family: 'Gabarito Semibold';
-  color: #0f0f0f;
-}
-
 .sentence {
   position: absolute;
+  span {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-family: 'Gabarito Semibold';
+    color: #0f0f0f;
+  }
 }
