@@ -17,7 +17,7 @@ const CustomCursor = () => {
   });
 
   let offset;
-  if (type === 'hover-name' || type === 'nav-hover') {
+  if (type !== 'default') {
     offset = -30;
   } else {
     offset = -4;
@@ -82,6 +82,7 @@ const CustomCursor = () => {
       <div className={styles['main-cursor']} ref={mainCursor}>
         <div className={styles['main-cursor-background']}>
           <div className={styles.greeting}>{'\u{1F44B}\u{1F3FB}'}</div>
+          <div className={styles.view}>VIEW</div>
         </div>
       </div>
       <div className={styles['secondary-cursor']} ref={secondaryCursor}>

@@ -81,7 +81,42 @@
   }
 }
 
+.hover-project {
+  .main-cursor {
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    mix-blend-mode: normal;
+  }
+
+  .main-cursor-background {
+    animation: scaleUpNav 0.4s cubic-bezier(0.23, 1, 0.05, 1.2) 0s forwards;
+  }
+
+  .secondary-cursor {
+    animation: fadeOut 0.1s cubic-bezier(0.23, 1, 0.05, 1.2) 0s forwards;
+  }
+
+  .greeting {
+    display: none;
+  }
+
+  .view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f0f0f;
+  }
+}
+
 .greeting {
+  display: none;
+}
+
+.view {
   display: none;
 }
 
