@@ -30,7 +30,7 @@ export default function ScrollDown() {
         reversed={true}
         text="SCROLL ME &#183; SCROLL ME &#183; SCROLL ME &#183;"
         textProps={{
-          style: { fontSize: '1.06rem', fontFamily: 'Gabarito Regular' },
+          style: { fontSize: '1.025rem', fontFamily: 'NunitoSans Light' },
         }}
         textPathProps={{ fill: '#efefef' }}
         tspanProps={{ dy: '-10' }}

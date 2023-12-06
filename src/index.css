@@ -1,45 +1,73 @@
 @font-face {
-  font-family: 'Gabarito Regular';
+  font-family: 'NunitoSans Thin';
   src:
-    local('Gabarito'),
-    url('./fonts/Gabarito/Gabarito-Regular.ttf') format('truetype');
+    local('NunitoSans'),
+    url('./fonts/NunitoSans/NunitoSans-Thin.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Gabarito Semibold';
+  font-family: 'NunitoSans ExtraLight';
   src:
-    local('Gabarito'),
-    url('./fonts/Gabarito/Gabarito-SemiBold.ttf') format('truetype');
+    local('NunitoSans'),
+    url('./fonts/NunitoSans/NunitoSans-ExtraLight.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Gabarito Medium';
+  font-family: 'NunitoSans Light';
   src:
-    local('Gabarito'),
-    url('./fonts/Gabarito/Gabarito-Medium.ttf') format('truetype');
+    local('NunitoSans'),
+    url('./fonts/NunitoSans/NunitoSans-Light.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Gabarito Bold';
+  font-family: 'NunitoSans Regular';
   src:
-    local('Gabarito'),
-    url('./fonts/Gabarito/Gabarito-Bold.ttf') format('truetype');
+    local('NunitoSans'),
+    url('./fonts/NunitoSans/NunitoSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Gabarito Extrabold';
+  font-family: 'NunitoSans Medium';
   src:
-    local('Gabarito'),
-    url('./fonts/Gabarito/Gabarito-ExtraBold.ttf') format('truetype');
+    local('NunitoSans'),
+    url('./fonts/NunitoSans/NunitoSans-Medium.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Gabarito Black';
+  font-family: 'NunitoSans Medium';
   src:
-    local('Gabarito'),
-    url('./fonts/Gabarito/Gabarito-Black.ttf') format('truetype');
+    local('NunitoSans'),
+    url('./fonts/NunitoSans/NunitoSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NunitoSans SemiBold';
+  src:
+    local('NunitoSans'),
+    url('./fonts/NunitoSans/NunitoSans-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NunitoSans Bold';
+  src:
+    local('NunitoSans'),
+    url('./fonts/NunitoSans/NunitoSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NunitoSans ExtraBold';
+  src:
+    local('NunitoSans'),
+    url('./fonts/NunitoSans/NunitoSans-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NunitoSans Black';
+  src:
+    local('NunitoSans'),
+    url('./fonts/NunitoSans/NunitoSans-Black.ttf') format('truetype');
 }
 
 body {
-  font-family: 'Gabarito Black', sans-serif;
+  font-family: 'NunitoSans Regular', sans-serif;
 }

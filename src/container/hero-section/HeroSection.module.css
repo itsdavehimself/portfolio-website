@@ -2,7 +2,7 @@ h1 {
   font-size: 12rem;
   margin: 0;
   line-height: 0.8;
-  font-family: 'Gabarito Bold';
+  font-family: 'NunitoSans Bold';
 }
 
 .intro-sequence {
@@ -46,10 +46,10 @@ h1 {
   align-self: flex-start;
   padding-right: 6rem;
   span {
-    font-size: 12rem;
+    font-size: 11rem;
     margin: 0;
     line-height: 0.8;
-    font-family: 'Gabarito Bold';
+    font-family: 'NunitoSans Bold';
     color: #efefef;
   }
 }
@@ -57,10 +57,10 @@ h1 {
 .developer {
   align-self: flex-end;
   span {
-    font-size: 12rem;
+    font-size: 11rem;
     margin: 0;
     line-height: 0.8;
-    font-family: 'Gabarito Bold';
+    font-family: 'NunitoSans Bold';
     color: #efefef;
   }
 }
@@ -71,8 +71,8 @@ h1 {
   span {
     color: #efefef;
     margin: 0;
-    font-size: 1.2rem;
-    font-family: 'Gabarito Regular';
+    font-size: 1.1rem;
+    font-family: 'NunitoSans Regular';
     align-self: flex-end;
   }
 }
