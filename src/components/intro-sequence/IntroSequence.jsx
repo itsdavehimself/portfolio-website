@@ -1,7 +1,7 @@
 import styles from './IntroSequence.module.css';
 import { motion, AnimatePresence, animate } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import QuotesIcon from '../quotes-icon/QuotesIcon';
+import QuotesIcon from '../icons/QuotesIcon';
 
 export default function IntroSequence() {
   const [isQuoteVisible, setIsQuoteVisible] = useState(true);
