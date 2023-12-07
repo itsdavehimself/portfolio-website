@@ -81,6 +81,7 @@ export default function Navbar() {
           initial="hidden"
           animate="visible"
           variants={nameVariant}
+          className={styles.name}
         >
           DAVID SMOLEN
         </motion.h3>
