@@ -1,4 +1,4 @@
-import styles from './ProjectsSideAnimation.module.css';
+import styles from './ProjectsHeader.module.css';
 
 export default function ProjectsSideAnimation() {
   return (

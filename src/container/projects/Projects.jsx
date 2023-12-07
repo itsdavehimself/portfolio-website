@@ -1,7 +1,7 @@
 import styles from './Projects.module.css';
 import { useContext } from 'react';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
-import ProjectsSideAnimation from '../../components/vertical-headers/projects-side-animation/ProjectsSideAnimation';
+import ProjectsHeader from '../../components/vertical-headers/projects-header/ProjectsHeader';
 
 export default function Projects() {
   const { setType } = useContext(CustomCursorContext);
@@ -17,7 +17,7 @@ export default function Projects() {
   return (
     <section className={styles['projects-container']}>
       <aside className={styles['projects-aside']}>
-        <ProjectsSideAnimation />
+        <ProjectsHeader />
       </aside>
       <div className={styles['projects-main']}>
         <div className={styles['projects-titles']}>

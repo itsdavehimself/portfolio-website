@@ -1,12 +1,12 @@
 import styles from './AboutMe.module.css';
 import PropTypes from 'prop-types';
-import AboutMeSideAnimation from '../../components/vertical-headers/about-me-side-animation/AboutMeSideAnimation';
+import AboutMeHeader from '../../components/vertical-headers/about-me-header/AboutMeHeader';
 
 export default function AboutMe({ scrollPosition }) {
   return (
     <section className={styles['about-me-container']}>
       <aside className={styles['about-me-aside']}>
-        <AboutMeSideAnimation />
+        <AboutMeHeader />
       </aside>
       <div className={styles['about-me-main']}>
         <h2 className={styles['about-me-header']}>
