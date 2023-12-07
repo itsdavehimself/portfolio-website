@@ -1,9 +1,50 @@
-.container {
+.skills-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: #0f0f0f;
+}
+
+.skills-main-header {
+  font-size: 3rem;
+}
+
+.web-dev-logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  padding-bottom: 4rem;
+  /* gap: 4rem; */
+}
+
+.main-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 3rem 2rem 3rem;
+}
+
+.skills-other-header {
+  font-size: 1.25rem;
+}
+
+.other-logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: center;
+  padding-bottom: 4rem;
+}
+
+.small-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
 }
