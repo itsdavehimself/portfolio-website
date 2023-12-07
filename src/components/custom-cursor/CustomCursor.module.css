@@ -112,6 +112,23 @@
   }
 }
 
+.hover-social {
+  .main-cursor {
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    mix-blend-mode: difference;
+  }
+
+  .main-cursor-background {
+    animation: scaleUpNav 0.4s cubic-bezier(0.23, 1, 0.05, 1.2) 0s forwards;
+  }
+
+  .secondary-cursor {
+    animation: fadeOut 0.1s cubic-bezier(0.23, 1, 0.05, 1.2) 0s forwards;
+  }
+}
+
 .greeting {
   display: none;
 }
