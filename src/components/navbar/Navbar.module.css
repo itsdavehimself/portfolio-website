@@ -32,7 +32,6 @@ nav {
     letter-spacing;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-  font-stretch: semi-expanded;
   width: 7rem;
   height: 3rem;
 }
