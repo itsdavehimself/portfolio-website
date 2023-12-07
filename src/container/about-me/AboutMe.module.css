@@ -48,6 +48,33 @@ h2 {
   }
 }
 
+.resume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-top: -4rem;
+  margin-left: -2rem;
+}
+
+.resume-btn {
+  height: 4rem;
+  width: 12rem;
+  background-color: #0f0f0f;
+  border: 2px #efefef solid;
+  border-radius: 5rem;
+  color: #efefef;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.resume-btn:hover {
+  background-color: #efefef;
+  color: #0f0f0f;
+  transition: all 0.2s ease-in-out;
+}
+
 .about-me-emphasis {
   font-family: 'Avenir';
   font-weight: 1000;

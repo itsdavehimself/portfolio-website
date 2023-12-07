@@ -1,8 +1,20 @@
 import styles from './AboutMe.module.css';
 import PropTypes from 'prop-types';
 import AboutMeHeader from '../../components/vertical-headers/about-me-header/AboutMeHeader';
+import { useContext } from 'react';
+import { CustomCursorContext } from '../../context/CustomCursorContext';
 
 export default function AboutMe({ scrollPosition }) {
+  const { setType } = useContext(CustomCursorContext);
+
+  const handleHoverResume = () => {
+    setType('hover-social');
+  };
+
+  const handleHoverResumeLeave = () => {
+    setType('default');
+  };
+
   return (
     <section className={styles['about-me-container']}>
       <aside className={styles['about-me-aside']}>
@@ -14,6 +26,15 @@ export default function AboutMe({ scrollPosition }) {
           <div>SYNTHESIZING CODE AND CREATIVITY</div>
         </h2>
         <div className={styles['about-me']}>
+          <div className={styles.resume}>
+            <button
+              className={styles['resume-btn']}
+              onMouseEnter={handleHoverResume}
+              onMouseLeave={handleHoverResumeLeave}
+            >
+              RESUME
+            </button>
+          </div>
           <div className={styles['about-me-paragraph']}>
             <p>
               Hey there, I&apos;m David—
