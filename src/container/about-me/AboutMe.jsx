@@ -1,6 +1,6 @@
 import styles from './AboutMe.module.css';
 import PropTypes from 'prop-types';
-import AboutMeSideAnimation from '../../components/about-me-side-animation/AboutMeSideAnimation';
+import AboutMeSideAnimation from '../../components/vertical-headers/about-me-side-animation/AboutMeSideAnimation';
 
 export default function AboutMe({ scrollPosition }) {
   return (

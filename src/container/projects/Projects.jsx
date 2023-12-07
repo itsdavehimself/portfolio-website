@@ -1,7 +1,7 @@
 import styles from './Projects.module.css';
 import { useContext } from 'react';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
-import ProjectsSideAnimation from '../../components/projects-side-animation/ProjectsSideAnimation';
+import ProjectsSideAnimation from '../../components/vertical-headers/projects-side-animation/ProjectsSideAnimation';
 
 export default function Projects() {
   const { setType } = useContext(CustomCursorContext);
