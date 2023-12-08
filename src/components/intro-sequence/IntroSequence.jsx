@@ -56,7 +56,7 @@ export default function IntroSequence() {
       ],
       [
         '.open-quotes',
-        { x: '-23.3rem', opacity: 0.15, scale: 0.5 },
+        { x: '-21.4rem', opacity: 0.15, scale: 0.5 },
         { delay: 0.05, duration: 0.15, ease: customEase },
       ],
     ];
@@ -75,7 +75,7 @@ export default function IntroSequence() {
 
       [
         '.close-quotes',
-        { x: '23rem', opacity: 0.15, scale: 0.5 },
+        { x: '21rem', opacity: 0.15, scale: 0.5 },
         { delay: 0.05, duration: 0.15, ease: customEase },
       ],
     ];
