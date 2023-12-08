@@ -12,7 +12,7 @@ export default function HeroSection() {
   const heroContainer = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroContainer,
-    offset: ['end 0.8', 'end .15'],
+    offset: ['0.8 0.8', 'end .15'],
   });
   const customEase = [0.16, 0.5, 0.2, 1];
 
