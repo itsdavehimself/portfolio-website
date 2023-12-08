@@ -9,8 +9,35 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 16.8rem;
-  width: 8rem;
+  transform: rotate(-90deg) translateX(-18rem) translateY(-8rem);
+  height: fit-content;
+}
+
+.projects-vertical {
+  display: flex;
+}
+
+.projects-line-container {
+  position: absolute;
+  top: 50%;
+}
+
+.projects-line {
+  width: 20rem;
+  height: 0.1rem;
+  background-color: #efefef;
+  position: absolute;
+}
+
+#my {
+  display: inline-block;
+  transform: translateX(-8rem);
+}
+
+#works {
+  display: inline-block;
+  transform: translateX(12rem);
+  font-weight: 900;
 }
 
 .projects-main {
@@ -26,14 +53,18 @@
   padding-left: 9rem;
 }
 
+.project-title-container {
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
 .project-title {
   font-size: 7rem;
   font-weight: 500;
-  transition: all 0.4s ease-in-out;
   margin: 0;
 }
 
-.project-title:hover {
+.project-title-container:hover {
   transform: translateX(1.7rem);
   transition: all 0.4s ease-in-out;
 }
