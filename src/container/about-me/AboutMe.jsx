@@ -11,7 +11,7 @@ export default function AboutMe() {
   const aboutMeContainer = useRef(null);
   const { scrollYProgress } = useScroll({
     target: aboutMeContainer,
-    offset: ['end 0.8', 'end .15'],
+    offset: ['end 0.8', 'end .25'],
   });
 
   const handleHoverResume = () => {
