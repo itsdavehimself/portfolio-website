@@ -35,6 +35,7 @@ h2 {
 #about {
   display: inline-block;
   transform: translateX(-8rem);
+  font-weight: 900;
 }
 
 #me {
