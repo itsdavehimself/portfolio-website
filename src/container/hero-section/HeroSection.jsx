@@ -5,8 +5,15 @@ import IntroSequence from '../../components/intro-sequence/IntroSequence';
 import ScrollDown from '../../components/scroll-down/ScrollDown';
 import Navbar from '../../components/navbar/Navbar';
 import PropTypes from 'prop-types';
+import { useRef } from 'react';
+import { useScroll } from 'framer-motion';
 
-export default function HeroSection({ scrollPosition }) {
+export default function HeroSection() {
+  const heroContainer = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroContainer,
+    offset: ['end 0.8', 'end .15'],
+  });
   const customEase = [0.16, 0.5, 0.2, 1];
 
   const tagline = 'WEAVING A WEB OF SKILLS BY COLLECTING & CONNECTING DOTS';
@@ -137,80 +144,82 @@ export default function HeroSection({ scrollPosition }) {
   };
 
   return (
-    <motion.main
-      className={styles['hero-container']}
-      style={{ opacity: 1 - scrollPosition / 950 }}
-    >
-      <motion.section
-        className={styles['intro-sequence']}
-        initial="hidden"
-        animate="visible"
-        variants={introDiv}
-      >
-        <IntroSequence />
-      </motion.section>
+    <motion.main ref={heroContainer}>
       <motion.div
-        className={styles['scroll-component']}
-        initial="hidden"
-        animate="visible"
-        variants={scrollComponent}
+        className={styles['hero-container']}
+        style={{ opacity: 1 - scrollYProgress.current }}
       >
-        <ScrollDown />
-      </motion.div>
-      <Navbar />
-      <section className={styles.hero}>
-        <div className={styles['hero-text']}>
-          <h1 className={styles.title}>
+        <motion.section
+          className={styles['intro-sequence']}
+          initial="hidden"
+          animate="visible"
+          variants={introDiv}
+        >
+          <IntroSequence />
+        </motion.section>
+        <motion.div
+          className={styles['scroll-component']}
+          initial="hidden"
+          animate="visible"
+          variants={scrollComponent}
+        >
+          <ScrollDown />
+        </motion.div>
+        <Navbar />
+        <section className={styles.hero}>
+          <div className={styles['hero-text']}>
+            <h1 className={styles.title}>
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={fullstackVariant}
+                className={styles.fullstack}
+              >
+                {fullstack.split('').map((letter, index) => (
+                  <motion.span key={index} variants={letterVariant}>
+                    {letter}
+                  </motion.span>
+                ))}
+              </motion.div>
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={developerVariant}
+                className={styles.developer}
+              >
+                {developer.split('').map((letter, index) => (
+                  <motion.span key={index} variants={letterVariant}>
+                    {letter}
+                  </motion.span>
+                ))}
+              </motion.div>
+            </h1>
             <motion.div
               initial="hidden"
               animate="visible"
-              variants={fullstackVariant}
-              className={styles.fullstack}
+              variants={taglineVariant}
+              className={styles.tagline}
             >
-              {fullstack.split('').map((letter, index) => (
+              {tagline.split(' ').map((word, index) => (
                 <motion.span key={index} variants={letterVariant}>
-                  {letter}
+                  {word} <motion.span></motion.span>
                 </motion.span>
               ))}
             </motion.div>
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={developerVariant}
-              className={styles.developer}
-            >
-              {developer.split('').map((letter, index) => (
-                <motion.span key={index} variants={letterVariant}>
-                  {letter}
-                </motion.span>
-              ))}
-            </motion.div>
-          </h1>
+          </div>
           <motion.div
             initial="hidden"
             animate="visible"
-            variants={taglineVariant}
-            className={styles.tagline}
+            variants={imageComponent}
           >
-            {tagline.split(' ').map((word, index) => (
-              <motion.span key={index} variants={letterVariant}>
-                {word} <motion.span></motion.span>
-              </motion.span>
-            ))}
+            <img
+              className={styles['hero-image']}
+              src={headshotColor}
+              alt="David Smolen"
+            ></img>
           </motion.div>
-        </div>
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={imageComponent}
-        >
-          <img
-            className={styles['hero-image']}
-            src={headshotColor}
-            alt="David Smolen"
-          ></img>
-        </motion.div>
-      </section>
+        </section>
+      </motion.div>
     </motion.main>
   );
 }
