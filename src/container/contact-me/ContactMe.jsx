@@ -71,7 +71,7 @@ export default function ContactMe() {
               onMouseEnter={handleHoverEmail}
               onMouseLeave={handleHoverEmailLeave}
             >
-              SEND ME
+              SEND DIGITAL MAIL
             </button>
           </div>
         </div>
