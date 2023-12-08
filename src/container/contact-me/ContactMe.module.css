@@ -47,7 +47,7 @@
   align-items: center;
   justify-content: flex-start;
   padding-left: 10rem;
-  gap: 2rem;
+  gap: 1rem;
   height: 100%;
   width: 50%;
 }
@@ -83,10 +83,14 @@
 .social-btn {
   border: none;
   background-color: #0f0f0f;
+  padding: 1rem;
+}
+
+.social-icon {
   transition: all 0.2s ease-in-out;
 }
 
-.social-btn:hover {
+.social-icon:hover {
   transform: scale(0.85);
   transition: all 0.2s ease-in-out;
 }

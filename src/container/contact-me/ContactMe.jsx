@@ -41,21 +41,27 @@ export default function ContactMe() {
               onMouseEnter={handleHoverEmail}
               onMouseLeave={handleHoverEmailLeave}
             >
-              <GithubLogo />
+              <div className={styles['social-icon']}>
+                <GithubLogo />
+              </div>
             </button>
             <button
               className={styles['social-btn']}
               onMouseEnter={handleHoverEmail}
               onMouseLeave={handleHoverEmailLeave}
             >
-              <LinkedInLogo />
+              <div className={styles['social-icon']}>
+                <LinkedInLogo />
+              </div>
             </button>
             <button
               className={styles['social-btn']}
               onMouseEnter={handleHoverEmail}
               onMouseLeave={handleHoverEmailLeave}
             >
-              <InstagramLogo />
+              <div className={styles['social-icon']}>
+                <InstagramLogo />
+              </div>
             </button>
           </div>
           <div className={styles.email}>
@@ -65,7 +71,7 @@ export default function ContactMe() {
               onMouseEnter={handleHoverEmail}
               onMouseLeave={handleHoverEmailLeave}
             >
-              DIGITAL MAIL ME
+              SEND ME
             </button>
           </div>
         </div>
