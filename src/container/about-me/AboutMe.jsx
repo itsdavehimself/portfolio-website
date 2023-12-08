@@ -1,6 +1,5 @@
 import styles from './AboutMe.module.css';
 import PropTypes from 'prop-types';
-import AboutMeHeader from '../../components/vertical-headers/about-me-header/AboutMeHeader';
 import { useContext } from 'react';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
 import { useRef } from 'react';
@@ -8,10 +7,23 @@ import { motion, useScroll } from 'framer-motion';
 
 export default function AboutMe() {
   const { setType } = useContext(CustomCursorContext);
+
   const aboutMeContainer = useRef(null);
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress: fadeOutProgress } = useScroll({
     target: aboutMeContainer,
     offset: ['end 0.8', 'end .25'],
+  });
+  const { scrollYProgress: sidebarSlideInProgress } = useScroll({
+    target: aboutMeContainer,
+    offset: ['start end', 'start .4'],
+  });
+  const { scrollYProgress: sidebarSlideApartProgress } = useScroll({
+    target: aboutMeContainer,
+    offset: ['end end', 'start .3'],
+  });
+  const { scrollYProgress: contentProgress } = useScroll({
+    target: aboutMeContainer,
+    offset: ['end end', 'start .2'],
   });
 
   const handleHoverResume = () => {
@@ -26,15 +38,74 @@ export default function AboutMe() {
     <section ref={aboutMeContainer}>
       <motion.div
         className={styles['about-me-container']}
-        style={{ opacity: 1 - scrollYProgress.current }}
+        style={{ opacity: 1 - fadeOutProgress.current }}
       >
         <aside className={styles['about-me-aside']}>
-          <AboutMeHeader />
+          <div
+            className={styles['about-me-vertical']}
+            style={{
+              transform: `translateY(${Math.pow(
+                sidebarSlideInProgress.current * 3.2,
+                2,
+              )}rem)`,
+              opacity: sidebarSlideInProgress.current,
+            }}
+          >
+            <span id={styles.about}>
+              <span
+                style={{
+                  display: 'inline-block',
+                  transform: `translateX(${
+                    sidebarSlideApartProgress.current * 10
+                  }rem)`,
+                }}
+              >
+                ABOUT
+              </span>
+            </span>
+            <div className={styles['about-line-container']}>
+              <div
+                className={styles['about-line']}
+                style={{
+                  left: `${(1 - sidebarSlideApartProgress.current) * -4}rem`,
+                  marginLeft: `${5.3 * sidebarSlideApartProgress.current}rem`,
+                  width: `${(1 - sidebarSlideApartProgress.current) * 19}rem`,
+                }}
+              ></div>
+            </div>
+
+            <span id={styles.me}>
+              <span
+                style={{
+                  display: 'inline-block',
+                  transform: `translateX(${
+                    sidebarSlideApartProgress.current * -10
+                  }rem)`,
+                }}
+              >
+                ME
+              </span>
+            </span>
+          </div>
         </aside>
         <div className={styles['about-me-main']}>
           <h2 className={styles['about-me-header']}>
-            <div>DIGITAL MAKER</div>
-            <div>SYNTHESIZING CODE AND CREATIVITY</div>
+            <div
+              style={{
+                transform: `translateX(${contentProgress.current * -10}rem)`,
+                opacity: 1 - contentProgress.current,
+              }}
+            >
+              SYNTHESIZING
+            </div>
+            <div
+              style={{
+                transform: `translateX(${contentProgress.current * -10}rem)`,
+                opacity: 1 - contentProgress.current,
+              }}
+            >
+              CODE AND CREATIVITY
+            </div>
           </h2>
           <div className={styles['about-me']}>
             <div className={styles.resume}>
@@ -42,11 +113,18 @@ export default function AboutMe() {
                 className={styles['resume-btn']}
                 onMouseEnter={handleHoverResume}
                 onMouseLeave={handleHoverResumeLeave}
+                style={{ opacity: 1 - contentProgress.current * 2 }}
               >
                 RESUME
               </button>
             </div>
-            <div className={styles['about-me-paragraph']}>
+            <div
+              className={styles['about-me-paragraph']}
+              style={{
+                opacity: 1 - contentProgress.current,
+                transform: `translateY(${contentProgress.current * 8}rem)`,
+              }}
+            >
               <p>
                 Hey there, I&apos;m David—
                 <span className={styles['about-me-emphasis']}>

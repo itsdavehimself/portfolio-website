@@ -12,8 +12,34 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 16.8rem;
-  width: 8rem;
+  transform: rotate(-90deg) translateX(-18rem) translateY(-8rem);
+  height: fit-content;
+}
+
+.about-me-vertical {
+  display: flex;
+}
+
+.about-line-container {
+  position: absolute;
+  top: 50%;
+}
+
+.about-line {
+  width: 20rem;
+  height: 0.1rem;
+  background-color: #efefef;
+  position: absolute;
+}
+
+#about {
+  display: inline-block;
+  transform: translateX(-8rem);
+}
+
+#me {
+  display: inline-block;
+  transform: translateX(12rem);
 }
 
 .about-me-container {
@@ -32,14 +58,15 @@ h2 {
   line-height: 1;
   font-size: 4.8rem;
   height: 50%;
-  padding-left: 3rem;
+  padding-left: 6rem;
+  overflow: hidden;
 }
 
 .about-me {
   display: grid;
   grid-template-columns: 1fr 0.7fr;
   padding-right: 11rem;
-  margin-top: -4rem;
+  margin-top: -2rem;
   height: 50%;
   p {
     font-size: 1.1rem;
@@ -77,9 +104,10 @@ h2 {
 
 .about-me-emphasis {
   font-family: 'Avenir';
-  font-weight: 1000;
+  font-weight: 900;
 }
 
 .about-me-paragraph {
   grid-column-start: 2;
+  font-weight: 100;
 }
