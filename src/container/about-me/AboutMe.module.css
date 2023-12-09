@@ -12,7 +12,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  transform: rotate(-90deg) translateX(-18rem) translateY(-8rem);
+  transform: rotate(-90deg) translateX(-20rem) translateY(-8rem);
   height: fit-content;
 }
 
@@ -59,6 +59,7 @@ h2 {
   line-height: 1;
   font-size: 4.8rem;
   height: 50%;
+  padding-top: 2rem;
   padding-left: 6rem;
   overflow: hidden;
 }
