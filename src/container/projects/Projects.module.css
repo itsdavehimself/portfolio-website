@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  transform: rotate(-90deg) translateX(-18rem) translateY(-8rem);
+  transform: rotate(-90deg) translateX(-24rem) translateY(-8rem);
   height: fit-content;
 }
 
