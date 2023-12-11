@@ -1,10 +1,10 @@
 import styles from './Projects.module.css';
-import { useContext } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
-import { useRef } from 'react';
-import { useScroll } from 'framer-motion';
+import { useScroll, motion, easeInOut } from 'framer-motion';
 
 export default function Projects() {
+  const [hoveredProject, setHoveredProject] = useState(null);
   const { setType } = useContext(CustomCursorContext);
   const projectsContainer = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -24,12 +24,46 @@ export default function Projects() {
     offset: ['start start', 'start .3'],
   });
 
-  const handleHoverProject = () => {
+  const handleHoverFirstProject = () => {
     setType('hover-project');
+    setHoveredProject('first');
   };
 
-  const handleHoverProjectLeave = () => {
+  const handleHoverFirstProjectLeave = () => {
     setType('default');
+    setHoveredProject(null);
+  };
+
+  const handleHoverSecondProject = () => {
+    setType('hover-project');
+    setHoveredProject('second');
+  };
+
+  const handleHoverSecondProjectLeave = () => {
+    setType('default');
+    setHoveredProject(null);
+  };
+
+  const handleHoverThirdProject = () => {
+    setType('hover-project');
+    setHoveredProject('third');
+  };
+
+  const handleHoverThirdProjectLeave = () => {
+    setType('default');
+    setHoveredProject(null);
+  };
+
+  const projectCardVariant = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+      },
+    },
+    hidden: { opacity: 0, y: 50 },
+    exit: { opacity: 0, y: -50 },
   };
 
   return (
@@ -89,8 +123,8 @@ export default function Projects() {
           <div className={styles['projects-titles']}>
             <div className={styles['project-title-container']}>
               <h3
-                onMouseEnter={handleHoverProject}
-                onMouseLeave={handleHoverProjectLeave}
+                onMouseEnter={handleHoverFirstProject}
+                onMouseLeave={handleHoverFirstProjectLeave}
                 className={styles['project-title']}
                 style={{
                   transform: `translateY(${
@@ -104,8 +138,8 @@ export default function Projects() {
             </div>
             <div className={styles['project-title-container']}>
               <h3
-                onMouseEnter={handleHoverProject}
-                onMouseLeave={handleHoverProjectLeave}
+                onMouseEnter={handleHoverSecondProject}
+                onMouseLeave={handleHoverSecondProjectLeave}
                 className={styles['project-title']}
                 style={{
                   transform: `translateY(${
@@ -119,8 +153,8 @@ export default function Projects() {
             </div>
             <div className={styles['project-title-container']}>
               <h3
-                onMouseEnter={handleHoverProject}
-                onMouseLeave={handleHoverProjectLeave}
+                onMouseEnter={handleHoverThirdProject}
+                onMouseLeave={handleHoverThirdProjectLeave}
                 className={styles['project-title']}
                 style={{
                   transform: `translateY(${
@@ -133,7 +167,50 @@ export default function Projects() {
               </h3>
             </div>
           </div>
-          <div className={styles['projects-description']}></div>
+          <div
+            className={styles['project-description']}
+            style={{
+              transform: `translateY(${projectTitleProgress.current * 8}rem)`,
+              opacity: 1 - projectTitleProgress.current,
+            }}
+          >
+            {hoveredProject === 'first' && (
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={projectCardVariant}
+                exit="exit"
+                className={styles['project-card']}
+              >
+                <div className={styles['project-image']}></div>
+                <div>Full-Stack Web App</div>
+              </motion.div>
+            )}
+            {hoveredProject === 'second' && (
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={projectCardVariant}
+                exit="exit"
+                className={styles['project-card']}
+              >
+                <div className={styles['project-image']}></div>
+                <div> Frontend Shopping Cart</div>
+              </motion.div>
+            )}
+            {hoveredProject === 'third' && (
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={projectCardVariant}
+                exit="exit"
+                className={styles['project-card']}
+              >
+                <div className={styles['project-image']}></div>
+                <div>Browser Game</div>
+              </motion.div>
+            )}
+          </div>
         </div>
       </div>
     </section>
