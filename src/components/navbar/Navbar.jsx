@@ -124,7 +124,7 @@ export default function Navbar() {
           </Link>
           <Link
             activeClass="active"
-            to="#skills"
+            to="#skills-section"
             spy={true}
             smooth="easeInOutCubic"
             offset={100}

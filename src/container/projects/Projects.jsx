@@ -2,6 +2,7 @@ import styles from './Projects.module.css';
 import { useContext, useRef, useState } from 'react';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
 import { useScroll, motion, AnimatePresence } from 'framer-motion';
+import chainseekerImg from '../../assets/chainseeker-mockup.jpg';
 
 export default function Projects() {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -184,7 +185,11 @@ export default function Projects() {
                   exit="exit"
                   className={styles['project-card']}
                 >
-                  <div className={styles['project-image']}></div>
+                  <img
+                    src={chainseekerImg}
+                    alt="chainseeker app"
+                    className={styles['project-image']}
+                  ></img>
                   <div>Full-Stack Web App</div>
                 </motion.div>
               )}
