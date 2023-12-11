@@ -1,7 +1,7 @@
 import styles from './Projects.module.css';
 import { useContext, useRef, useState } from 'react';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
-import { useScroll, motion, easeInOut } from 'framer-motion';
+import { useScroll, motion, AnimatePresence } from 'framer-motion';
 
 export default function Projects() {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -60,10 +60,11 @@ export default function Projects() {
       y: 0,
       transition: {
         duration: 0.3,
+        delay: 0.1,
       },
     },
     hidden: { opacity: 0, y: 50 },
-    exit: { opacity: 0, y: -50 },
+    exit: { opacity: 0, y: 50, transition: { duration: 0.1 } },
   };
 
   return (
@@ -174,42 +175,48 @@ export default function Projects() {
               opacity: 1 - projectTitleProgress.current,
             }}
           >
-            {hoveredProject === 'first' && (
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={projectCardVariant}
-                exit="exit"
-                className={styles['project-card']}
-              >
-                <div className={styles['project-image']}></div>
-                <div>Full-Stack Web App</div>
-              </motion.div>
-            )}
-            {hoveredProject === 'second' && (
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={projectCardVariant}
-                exit="exit"
-                className={styles['project-card']}
-              >
-                <div className={styles['project-image']}></div>
-                <div> Frontend Shopping Cart</div>
-              </motion.div>
-            )}
-            {hoveredProject === 'third' && (
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={projectCardVariant}
-                exit="exit"
-                className={styles['project-card']}
-              >
-                <div className={styles['project-image']}></div>
-                <div>Browser Game</div>
-              </motion.div>
-            )}
+            <AnimatePresence>
+              {hoveredProject === 'first' && (
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={projectCardVariant}
+                  exit="exit"
+                  className={styles['project-card']}
+                >
+                  <div className={styles['project-image']}></div>
+                  <div>Full-Stack Web App</div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+            <AnimatePresence>
+              {hoveredProject === 'second' && (
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={projectCardVariant}
+                  exit="exit"
+                  className={styles['project-card']}
+                >
+                  <div className={styles['project-image']}></div>
+                  <div> Frontend Shopping Cart</div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+            <AnimatePresence>
+              {hoveredProject === 'third' && (
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={projectCardVariant}
+                  exit="exit"
+                  className={styles['project-card']}
+                >
+                  <div className={styles['project-image']}></div>
+                  <div>Browser Game</div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>
