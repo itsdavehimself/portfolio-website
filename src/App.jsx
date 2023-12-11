@@ -3,6 +3,7 @@ import { CustomCursorContextProvider } from './context/CustomCursorContext';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
 import { useState } from 'react';
 import CustomCursor from './components/custom-cursor/CustomCursor';
+import Navbar from './components/navbar/Navbar';
 import HeroSection from './container/hero-section/HeroSection';
 import AboutMe from './container/about-me/AboutMe';
 import SideDots from './components/side-dots/SideDots';
@@ -23,6 +24,7 @@ function App() {
       <div className="App">
         <CustomCursor />
         <SideDots scrollPosition={scrollPosition} />
+        <Navbar />
         <HeroSection scrollPosition={scrollPosition} />
         <AboutMe scrollPosition={scrollPosition} />
         <Projects />
