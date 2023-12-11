@@ -17,7 +17,6 @@ import OctaneLogo from '../../components/icons/OctaneLogo';
 import AfterEffectsLogo from '../../components/icons/AfterEffectsLogo';
 import PremiereLogo from '../../components/icons/PremiereLogo';
 import PhotoshopLogo from '../../components/icons/PhotoshopLogo';
-import MySkillsHeader from '../../components/vertical-headers/my-skills-header/MySkillsHeader';
 import { useRef } from 'react';
 import { useScroll } from 'framer-motion';
 
@@ -27,6 +26,14 @@ export default function Skills() {
     target: skillsContainer,
     offset: ['end 0.8', 'end .25'],
   });
+  const { scrollYProgress: sidebarSlideInProgress } = useScroll({
+    target: skillsContainer,
+    offset: ['start end', 'start .4'],
+  });
+  const { scrollYProgress: sidebarSlideApartProgress } = useScroll({
+    target: skillsContainer,
+    offset: ['end end', 'start .3'],
+  });
 
   return (
     <section ref={skillsContainer}>
@@ -35,11 +42,73 @@ export default function Skills() {
         style={{ opacity: 1 - scrollYProgress.current }}
       >
         <aside className={styles['skills-aside']}>
-          <MySkillsHeader />
+          <div
+            className={styles['skills-vertical']}
+            style={{
+              transform: `translateY(${Math.pow(
+                sidebarSlideInProgress.current * 3.2,
+                2,
+              )}rem)`,
+              opacity: sidebarSlideInProgress.current,
+            }}
+          >
+            <span id={styles['skills-my']}>
+              <span
+                style={{
+                  display: 'inline-block',
+                  transform: `translateX(${
+                    sidebarSlideApartProgress.current * 10
+                  }rem)`,
+                }}
+              >
+                MY
+              </span>
+            </span>
+            <div className={styles['skills-line-container']}>
+              <div
+                className={styles['skills-line']}
+                style={{
+                  left: `${(1 - sidebarSlideApartProgress.current) * -6}rem`,
+                  marginLeft: `${3.6 * sidebarSlideApartProgress.current}rem`,
+                  width: `${(1 - sidebarSlideApartProgress.current) * 19}rem`,
+                }}
+              ></div>
+            </div>
+            <span id={styles.skills}>
+              <span
+                style={{
+                  display: 'inline-block',
+                  transform: `translateX(${
+                    sidebarSlideApartProgress.current * -10
+                  }rem)`,
+                }}
+              >
+                SKILLS
+              </span>
+            </span>
+          </div>
         </aside>
         <div className={styles['skills-main']}>
-          <h3 className={styles['skills-main-header']}>WEB DEVELOPMENT</h3>
-          <div className={styles['web-dev-logos']}>
+          <h3
+            className={styles['skills-main-header']}
+            style={{
+              opacity: 1 - sidebarSlideApartProgress.current,
+              transform: `translateY(${
+                sidebarSlideApartProgress.current * 10
+              }rem)`,
+            }}
+          >
+            WEB DEVELOPMENT
+          </h3>
+          <div
+            className={styles['web-dev-logos']}
+            style={{
+              opacity: 1 - sidebarSlideApartProgress.current,
+              transform: `translateY(${
+                sidebarSlideApartProgress.current * 10
+              }rem)`,
+            }}
+          >
             <div className={styles['main-icon']}>
               <HtmlLogo />
               HTML
@@ -89,26 +158,48 @@ export default function Skills() {
               Figma
             </div>
           </div>
-          <h3 className={styles['skills-other-header']}>OTHER SKILLS</h3>
-          <div className={styles['other-logos']}>
-            <div className={styles['small-icon']}>
-              <Cinema4dLogo />
-              Cinema4D
-            </div>
-            <div className={styles['small-icon']}>
-              <OctaneLogo /> Octane
-            </div>
-            <div className={styles['small-icon']}>
-              <BlenderLogo /> Blender
-            </div>
-            <div className={styles['small-icon']}>
-              <AfterEffectsLogo /> After Effects
-            </div>
-            <div className={styles['small-icon']}>
-              <PhotoshopLogo /> Photoshop
-            </div>
-            <div className={styles['small-icon']}>
-              <PremiereLogo /> Premiere
+          <div style={{ overflow: 'hidden' }}>
+            <h3
+              className={styles['skills-other-header']}
+              style={{
+                opacity:
+                  1 - Math.pow(sidebarSlideApartProgress.current, 0.5) * 1.25,
+                transform: `translateY(${
+                  1 - sidebarSlideApartProgress.current * 15
+                }rem)`,
+              }}
+            >
+              OTHER SKILLS
+            </h3>
+            <div
+              className={styles['other-logos']}
+              style={{
+                opacity:
+                  1 - Math.pow(sidebarSlideApartProgress.current, 0.5) * 1.25,
+                transform: `translateY(${
+                  1 - sidebarSlideApartProgress.current * 15
+                }rem)`,
+              }}
+            >
+              <div className={styles['small-icon']}>
+                <Cinema4dLogo />
+                Cinema4D
+              </div>
+              <div className={styles['small-icon']}>
+                <OctaneLogo /> Octane
+              </div>
+              <div className={styles['small-icon']}>
+                <BlenderLogo /> Blender
+              </div>
+              <div className={styles['small-icon']}>
+                <AfterEffectsLogo /> After Effects
+              </div>
+              <div className={styles['small-icon']}>
+                <PhotoshopLogo /> Photoshop
+              </div>
+              <div className={styles['small-icon']}>
+                <PremiereLogo /> Premiere
+              </div>
             </div>
           </div>
         </div>
