@@ -68,7 +68,7 @@ export default function Projects() {
   };
 
   return (
-    <section ref={projectsContainer}>
+    <section ref={projectsContainer} id="#projects">
       <div
         className={styles['projects-container']}
         style={{ opacity: 1 - scrollYProgress.current }}

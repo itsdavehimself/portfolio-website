@@ -2,11 +2,11 @@ import styles from './Navbar.module.css';
 import { useContext } from 'react';
 import { motion } from 'framer-motion';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
+import { Link } from 'react-scroll';
 
 export default function Navbar() {
   const { setType } = useContext(CustomCursorContext);
   const customEase = [0.16, 0.5, 0.2, 1];
-  const buttonNames = ['HOME', 'ABOUT', 'PROJECTS', 'DOTS', 'CONTACT'];
 
   const handleHoverName = () => {
     setType('hover-name');
@@ -88,17 +88,74 @@ export default function Navbar() {
       </div>
       <motion.div initial="hidden" animate="visible" variants={navVariant}>
         <div className={styles['nav-btns']}>
-          {buttonNames.map((buttonName, index) => (
+          <Link
+            activeClass="active"
+            to="#about-me"
+            spy={true}
+            smooth="easeInOutCubic"
+            offset={0}
+            duration={1000}
+          >
             <motion.button
-              key={index}
               className={styles['nav-btn']}
               variants={buttonVariant}
               onMouseEnter={handleNavBtnHover}
               onMouseLeave={handleNavBtnHoverLeave}
             >
-              {buttonName}
+              ABOUT
             </motion.button>
-          ))}
+          </Link>
+          <Link
+            activeClass="active"
+            to="#projects"
+            spy={true}
+            smooth="easeInOutCubic"
+            offset={0}
+            duration={1000}
+          >
+            <motion.button
+              className={styles['nav-btn']}
+              variants={buttonVariant}
+              onMouseEnter={handleNavBtnHover}
+              onMouseLeave={handleNavBtnHoverLeave}
+            >
+              PROJECTS
+            </motion.button>
+          </Link>
+          <Link
+            activeClass="active"
+            to="#skills"
+            spy={true}
+            smooth="easeInOutCubic"
+            offset={100}
+            duration={1000}
+          >
+            <motion.button
+              className={styles['nav-btn']}
+              variants={buttonVariant}
+              onMouseEnter={handleNavBtnHover}
+              onMouseLeave={handleNavBtnHoverLeave}
+            >
+              SKILLS
+            </motion.button>
+          </Link>
+          <Link
+            activeClass="active"
+            to="#contact-section"
+            spy={true}
+            smooth="easeInOutCubic"
+            offset={140}
+            duration={1000}
+          >
+            <motion.button
+              className={styles['nav-btn']}
+              variants={buttonVariant}
+              onMouseEnter={handleNavBtnHover}
+              onMouseLeave={handleNavBtnHoverLeave}
+            >
+              CONTACT
+            </motion.button>
+          </Link>
         </div>
       </motion.div>
     </nav>

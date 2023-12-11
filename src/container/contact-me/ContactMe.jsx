@@ -40,7 +40,7 @@ export default function ContactMe() {
   };
 
   return (
-    <section ref={contactContainer}>
+    <section ref={contactContainer} id="#contact-section">
       <div className={styles['contact-container']}>
         <aside className={styles['contact-aside']}>
           <div

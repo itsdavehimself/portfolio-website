@@ -36,7 +36,7 @@ export default function Skills() {
   });
 
   return (
-    <section ref={skillsContainer}>
+    <section ref={skillsContainer} id="#skills">
       <div
         className={styles['skills-container']}
         style={{ opacity: 1 - scrollYProgress.current }}

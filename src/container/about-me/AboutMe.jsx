@@ -35,7 +35,7 @@ export default function AboutMe() {
   };
 
   return (
-    <section ref={aboutMeContainer}>
+    <section ref={aboutMeContainer} id="#about-me">
       <motion.div
         className={styles['about-me-container']}
         style={{ opacity: 1 - fadeOutProgress.current }}
