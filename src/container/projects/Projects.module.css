@@ -84,11 +84,12 @@
   color: #efefef;
   font-size: 1.5rem;
   gap: 1rem;
+  padding-top: 5rem;
 }
 
 .project-image {
-  height: 32.5rem;
-  width: 26rem;
+  height: 40rem;
+  width: 32rem;
   background-color: #efefef;
   border-radius: 1rem;
   transition: all 0.3s ease-in-out;
