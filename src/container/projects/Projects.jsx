@@ -166,7 +166,7 @@ export default function Projects() {
                   opacity: 1 - projectTitleProgress.current,
                 }}
               >
-                BATTLESHIP
+                RE:MEMBER
               </h3>
             </div>
           </div>
@@ -223,7 +223,7 @@ export default function Projects() {
                   className={styles['project-card']}
                 >
                   <div className={styles['project-image']}></div>
-                  <div>Browser Game</div>
+                  <div>Incremental/Idle Browser Game</div>
                 </motion.div>
               )}
             </AnimatePresence>
