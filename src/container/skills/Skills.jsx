@@ -9,8 +9,6 @@ import MongoLogo from '../../components/icons/MonogLogo';
 import NpmLogo from '../../components/icons/NpmLogo';
 import GitLogo from '../../components/icons/GitLogo';
 import TerminalLogo from '../../components/icons/TerminalLogo';
-import JiraLogo from '../../components/icons/JiraLogo';
-import FigmaLogo from '../../components/icons/FigmaLogo';
 import Cinema4dLogo from '../../components/icons/Cinema4dLogo';
 import BlenderLogo from '../../components/icons/BlenderLogo';
 import OctaneLogo from '../../components/icons/OctaneLogo';
@@ -19,6 +17,8 @@ import PremiereLogo from '../../components/icons/PremiereLogo';
 import PhotoshopLogo from '../../components/icons/PhotoshopLogo';
 import { useRef } from 'react';
 import { useScroll } from 'framer-motion';
+import SassLogo from '../../components/icons/SassLogo';
+import TsLogo from '../../components/icons/TsLogo';
 
 export default function Skills() {
   const skillsContainer = useRef(null);
@@ -122,12 +122,20 @@ export default function Skills() {
               Javascript
             </div>
             <div className={styles['main-icon']}>
+              <TsLogo />
+              TypeScript
+            </div>
+            <div className={styles['main-icon']}>
               <ReactLogo />
               React.js
             </div>
             <div className={styles['main-icon']}>
               <TailwindLogo />
               TailwindCSS
+            </div>
+            <div className={styles['main-icon']}>
+              <SassLogo />
+              Sass
             </div>
             <div className={styles['main-icon']}>
               <NodeLogo />
@@ -148,14 +156,6 @@ export default function Skills() {
             <div className={styles['main-icon']}>
               <TerminalLogo />
               Terminal
-            </div>
-            <div className={styles['main-icon']}>
-              <JiraLogo />
-              Jira
-            </div>
-            <div className={styles['main-icon']}>
-              <FigmaLogo />
-              Figma
             </div>
           </div>
           <div style={{ overflow: 'hidden' }}>
