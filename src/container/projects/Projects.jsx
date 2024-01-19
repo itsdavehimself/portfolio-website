@@ -2,6 +2,7 @@ import styles from './Projects.module.css';
 import { useContext, useRef, useState } from 'react';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
 import { useScroll, motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import chainseekerImg from '../../assets/chainseeker-mockup-portrait.jpg';
 import shoppingCartImg from '../../assets/1337market-mockup-portrait.jpg';
 import rememberImg from '../../assets/remember-mockup-portrait.jpg';
@@ -126,19 +127,21 @@ export default function Projects() {
         <div className={styles['projects-main']}>
           <div className={styles['projects-titles']}>
             <div className={styles['project-title-container']}>
-              <h3
-                onMouseEnter={handleHoverFirstProject}
-                onMouseLeave={handleHoverFirstProjectLeave}
-                className={styles['project-title']}
-                style={{
-                  transform: `translateY(${
-                    projectTitleProgress.current * 8
-                  }rem)`,
-                  opacity: 1 - projectTitleProgress.current,
-                }}
-              >
-                CHAINSEEKER
-              </h3>
+              <Link to="/projects/chainseeker">
+                <h3
+                  onMouseEnter={handleHoverFirstProject}
+                  onMouseLeave={handleHoverFirstProjectLeave}
+                  className={styles['project-title']}
+                  style={{
+                    transform: `translateY(${
+                      projectTitleProgress.current * 8
+                    }rem)`,
+                    opacity: 1 - projectTitleProgress.current,
+                  }}
+                >
+                  CHAINSEEKER
+                </h3>
+              </Link>
             </div>
             <div className={styles['project-title-container']}>
               <h3

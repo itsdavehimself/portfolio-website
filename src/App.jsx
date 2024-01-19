@@ -10,6 +10,10 @@ import SideDots from './components/side-dots/SideDots';
 import Projects from './container/projects/Projects';
 import Skills from './container/skills/Skills';
 import ContactMe from './container/contact-me/ContactMe';
+import ChainseekerPage from './container/chainseeker-page/ChainseekerPage';
+import ShoppingCartPage from './container/shopping-cart-page/ShoppingCartPage';
+import RememberPage from './container/remember-page/RememberPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   const { scrollY } = useScroll();
@@ -21,16 +25,28 @@ function App() {
 
   return (
     <CustomCursorContextProvider>
-      <div className="App">
-        <CustomCursor />
-        <SideDots scrollPosition={scrollPosition} />
-        <Navbar />
-        <HeroSection scrollPosition={scrollPosition} />
-        <AboutMe scrollPosition={scrollPosition} />
-        <Projects />
-        <Skills />
-        <ContactMe />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="App">
+                <CustomCursor />
+                <SideDots scrollPosition={scrollPosition} />
+                <Navbar />
+                <HeroSection scrollPosition={scrollPosition} />
+                <AboutMe scrollPosition={scrollPosition} />
+                <Projects />
+                <Skills />
+                <ContactMe />
+              </div>
+            }
+          />
+          <Route path="/projects/chainseeker" element={<ChainseekerPage />} />
+          <Route path="/projects/1337market" element={<ShoppingCartPage />} />
+          <Route path="/projects/remember" element={<RememberPage />} />
+        </Routes>
+      </BrowserRouter>
     </CustomCursorContextProvider>
   );
 }
