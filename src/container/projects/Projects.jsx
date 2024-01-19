@@ -4,6 +4,7 @@ import { CustomCursorContext } from '../../context/CustomCursorContext';
 import { useScroll, motion, AnimatePresence } from 'framer-motion';
 import chainseekerImg from '../../assets/chainseeker-mockup-portrait.jpg';
 import shoppingCartImg from '../../assets/1337market-mockup-portrait.jpg';
+import rememberImg from '../../assets/remember-mockup-portrait.jpg';
 
 export default function Projects() {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -222,7 +223,11 @@ export default function Projects() {
                   exit="exit"
                   className={styles['project-card']}
                 >
-                  <div className={styles['project-image']}></div>
+                  <img
+                    src={rememberImg}
+                    alt="1337Market Project"
+                    className={styles['project-image']}
+                  ></img>{' '}
                   <div>Incremental/Idle Browser Game</div>
                 </motion.div>
               )}
