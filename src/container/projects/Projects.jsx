@@ -1,4 +1,5 @@
 import styles from './Projects.module.css';
+import { CustomCursorContextProvider } from '../../context/CustomCursorContext';
 import { useContext, useRef, useState } from 'react';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
 import { useScroll, motion, AnimatePresence } from 'framer-motion';
@@ -144,34 +145,38 @@ export default function Projects() {
               </Link>
             </div>
             <div className={styles['project-title-container']}>
-              <h3
-                onMouseEnter={handleHoverSecondProject}
-                onMouseLeave={handleHoverSecondProjectLeave}
-                className={styles['project-title']}
-                style={{
-                  transform: `translateY(${
-                    projectTitleProgress.current * 8
-                  }rem)`,
-                  opacity: 1 - projectTitleProgress.current,
-                }}
-              >
-                1337MARKET
-              </h3>
+              <Link to="/projects/1337market">
+                <h3
+                  onMouseEnter={handleHoverSecondProject}
+                  onMouseLeave={handleHoverSecondProjectLeave}
+                  className={styles['project-title']}
+                  style={{
+                    transform: `translateY(${
+                      projectTitleProgress.current * 8
+                    }rem)`,
+                    opacity: 1 - projectTitleProgress.current,
+                  }}
+                >
+                  1337MARKET
+                </h3>
+              </Link>
             </div>
             <div className={styles['project-title-container']}>
-              <h3
-                onMouseEnter={handleHoverThirdProject}
-                onMouseLeave={handleHoverThirdProjectLeave}
-                className={styles['project-title']}
-                style={{
-                  transform: `translateY(${
-                    projectTitleProgress.current * 8
-                  }rem)`,
-                  opacity: 1 - projectTitleProgress.current,
-                }}
-              >
-                RE:MEMBER
-              </h3>
+              <Link to="/projects/remember">
+                <h3
+                  onMouseEnter={handleHoverThirdProject}
+                  onMouseLeave={handleHoverThirdProjectLeave}
+                  className={styles['project-title']}
+                  style={{
+                    transform: `translateY(${
+                      projectTitleProgress.current * 8
+                    }rem)`,
+                    opacity: 1 - projectTitleProgress.current,
+                  }}
+                >
+                  RE:MEMBER
+                </h3>
+              </Link>
             </div>
           </div>
           <div

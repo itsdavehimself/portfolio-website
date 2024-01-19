@@ -69,9 +69,12 @@ const CustomCursor = () => {
         positionRef.current.destinationY += distanceY;
       }
 
-      secondaryCursor.current.style.transform = `translate3d(${
-        destinationX - 16.5
-      }px, ${destinationY - 16.5}px, 0)`;
+      const cursor = secondaryCursor.current;
+      if (cursor) {
+        cursor.style.transform = `translate3d(${destinationX - 16.5}px, ${
+          destinationY - 16.5
+        }px, 0)`;
+      }
     };
 
     followMouse();
