@@ -1,5 +1,4 @@
 import styles from './Projects.module.css';
-import { CustomCursorContextProvider } from '../../context/CustomCursorContext';
 import { useContext, useRef, useState } from 'react';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
 import { useScroll, motion, AnimatePresence } from 'framer-motion';
