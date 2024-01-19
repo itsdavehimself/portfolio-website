@@ -98,7 +98,7 @@ function App() {
                 projectName={'RE:MEMBER'}
                 projectDescription={rememberDescription}
                 techStack={rememberTechStack}
-                year={'2023'}
+                year={'2024'}
                 imgSrc={rememberLandscapeImg}
                 imgAlt={'1337market app'}
                 keyFeatures={rememberKeyFeatures}
