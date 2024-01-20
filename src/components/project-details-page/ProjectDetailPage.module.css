@@ -18,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  column-gap: 6rem;
+  column-gap: 2rem;
 }
 
 .home-btn {
