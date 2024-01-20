@@ -1,12 +1,14 @@
 import styles from './IntroSequence.module.css';
 import { motion, AnimatePresence, animate } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import QuotesIcon from '../icons/QuotesIcon';
+import { CustomCursorContext } from '../../context/CustomCursorContext';
 
 export default function IntroSequence() {
   const [isQuoteVisible, setIsQuoteVisible] = useState(true);
   const [isOpenQuoteVisible, setIsOpenQuoteVisible] = useState(true);
   const [isCloseQuoteVisible, setIsCloseQuoteVisible] = useState(true);
+  const { setType } = useContext(CustomCursorContext);
 
   const sentence =
     'You have to trust that the dots will somehow connect in your future.';
@@ -42,6 +44,7 @@ export default function IntroSequence() {
   };
 
   useEffect(() => {
+    setType('hidden');
     const customEase = [0.05, 0.17, 0.23, 1];
     const openQuotesSequence = [
       [
@@ -92,6 +95,7 @@ export default function IntroSequence() {
     const hideOpenCloseQuoteTimeout = setTimeout(() => {
       setIsOpenQuoteVisible(false);
       setIsCloseQuoteVisible(false);
+      setType('default');
     }, 4300);
 
     const restoreBodyOverflowTimeout = setTimeout(() => {
