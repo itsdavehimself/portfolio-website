@@ -73,7 +73,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav>
+    <nav className={styles['main-nav']}>
       <div>
         <motion.h3
           onMouseEnter={handleHoverName}
