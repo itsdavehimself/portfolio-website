@@ -1,7 +1,7 @@
 import './App.css';
 import { CustomCursorContextProvider } from './context/CustomCursorContext';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CustomCursor from './components/custom-cursor/CustomCursor';
 import Navbar from './components/navbar/Navbar';
 import HeroSection from './container/hero-section/HeroSection';
@@ -12,6 +12,7 @@ import Skills from './container/skills/Skills';
 import ContactMe from './container/contact-me/ContactMe';
 import ProjectDetailPage from './components/project-details-page/ProjectDetailPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './utility/scrollToTop';
 import {
   chainseekerDescription,
   chainseekerTechStack,
@@ -45,6 +46,7 @@ function App() {
   return (
     <CustomCursorContextProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route
             path="/"
@@ -73,6 +75,10 @@ function App() {
                 imgAlt={'chainseeker app'}
                 keyFeatures={chainseekerKeyFeatures}
                 challenges={chainseekerChallenges}
+                repoURL={
+                  'https://github.com/itsdavehimself/disc-golf-scorecard-app'
+                }
+                liveURL={'https://magical-jalebi-893a82.netlify.app/'}
               />
             }
           />
@@ -88,6 +94,8 @@ function App() {
                 imgAlt={'1337market app'}
                 keyFeatures={shoppingCartKeyFeatures}
                 challenges={shoppingCartChallenges}
+                repoURL={'https://github.com/itsdavehimself/top-shopping-cart'}
+                liveURL={'https://curious-gingersnap-75b4f3.netlify.app'}
               />
             }
           />
@@ -103,6 +111,8 @@ function App() {
                 imgAlt={'1337market app'}
                 keyFeatures={rememberKeyFeatures}
                 challenges={rememberChallenges}
+                repoURL={'https://github.com/itsdavehimself/incremental-game'}
+                liveURL={'https://mellifluous-sprinkles-ccda1b.netlify.app'}
               />
             }
           />
