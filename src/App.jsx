@@ -1,7 +1,7 @@
 import './App.css';
 import { CustomCursorContextProvider } from './context/CustomCursorContext';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import CustomCursor from './components/custom-cursor/CustomCursor';
 import Navbar from './components/navbar/Navbar';
 import HeroSection from './container/hero-section/HeroSection';
