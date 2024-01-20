@@ -1,5 +1,61 @@
 .project-details-container {
-  padding: 0 5rem;
+  margin: 0 5rem;
+}
+
+.project-details-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.home-nav {
+  display: flex;
+  align-items: center;
+}
+
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 6rem;
+}
+
+.home-btn {
+  border: none;
+  font-size: 0.8rem;
+  background-color: transparent;
+  color: #efefef;
+  transition-property: font-stretch, background-color, font-size, font-weight,
+    letter-spacing;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  width: 7rem;
+  height: 3rem;
+}
+
+.home-btn:hover {
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.pill-btn {
+  background-color: #0f0f0f;
+  color: #efefef;
+  border: 1px #efefef solid;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.pill-btn:hover {
+  background-color: #efefef;
+  color: #0f0f0f;
+  transition: all 0.2s ease-in-out;
 }
 
 .project-details-hero {

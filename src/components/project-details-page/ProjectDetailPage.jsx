@@ -1,6 +1,7 @@
 import CustomCursor from '../../components/custom-cursor/CustomCursor';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
 import { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './ProjectDetailPage.module.css';
 import PropTypes from 'prop-types';
 
@@ -13,8 +14,18 @@ const ProjectDetailPage = ({
   imgAlt,
   keyFeatures,
   challenges,
+  repoURL,
+  liveURL,
 }) => {
   const { setType } = useContext(CustomCursorContext);
+
+  const handleNavBtnHover = () => {
+    setType('nav-hover');
+  };
+
+  const handleNavBtnHoverLeave = () => {
+    setType('default');
+  };
 
   useEffect(() => {
     setType('default');
@@ -24,6 +35,39 @@ const ProjectDetailPage = ({
     <>
       <CustomCursor />
       <div className={styles['project-details-container']}>
+        <nav className={styles['project-details-navbar']}>
+          <div className={styles['home-nav']}>
+            <Link to="/">
+              <button
+                onMouseEnter={handleNavBtnHover}
+                onMouseLeave={handleNavBtnHoverLeave}
+                className={styles['home-btn']}
+              >
+                HOME
+              </button>
+            </Link>
+          </div>
+          <div className={styles['project-nav']}>
+            <a href={repoURL} target="_blank" rel="noreferrer">
+              <button
+                onMouseEnter={handleNavBtnHover}
+                onMouseLeave={handleNavBtnHoverLeave}
+                className={styles['pill-btn']}
+              >
+                PROJECT REPO
+              </button>
+            </a>
+            <a href={liveURL} target="_blank" rel="noreferrer">
+              <button
+                onMouseEnter={handleNavBtnHover}
+                onMouseLeave={handleNavBtnHoverLeave}
+                className={styles['pill-btn']}
+              >
+                LIVE SITE
+              </button>
+            </a>
+          </div>
+        </nav>
         <div className={styles['project-details-hero']}>
           <div className={styles['project-details']}>
             <h2>{projectName}</h2>
@@ -93,6 +137,8 @@ ProjectDetailPage.propTypes = {
   imgAlt: PropTypes.string,
   keyFeatures: PropTypes.array,
   challenges: PropTypes.array,
+  repoURL: PropTypes.string,
+  liveURL: PropTypes.string,
 };
 
 export default ProjectDetailPage;
