@@ -112,10 +112,12 @@
   border: none;
   background-color: #0f0f0f;
   padding: 1rem;
+  cursor: none;
 }
 
 .social-icon {
   transition: all 0.2s ease-in-out;
+  cursor: none;
 }
 
 .social-icon:hover {

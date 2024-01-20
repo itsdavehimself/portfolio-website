@@ -110,33 +110,42 @@ export default function ContactMe() {
               transition={{ duration: 0.3 }}
               viewport={{ amount: 0.8 }}
             >
-              <button
+              <a
+                href="https://github.com/itsdavehimself"
+                target="_blank"
                 className={styles['social-btn']}
                 onMouseEnter={handleHoverEmail}
                 onMouseLeave={handleHoverEmailLeave}
+                rel="noreferrer"
               >
                 <div className={styles['social-icon']}>
                   <GithubLogo />
                 </div>
-              </button>
-              <button
+              </a>
+              <a
+                href="https://www.linkedin.com/in/david-smolen-40a979110/"
+                target="_blank"
                 className={styles['social-btn']}
                 onMouseEnter={handleHoverEmail}
                 onMouseLeave={handleHoverEmailLeave}
+                rel="noreferrer"
               >
                 <div className={styles['social-icon']}>
                   <LinkedInLogo />
                 </div>
-              </button>
-              <button
+              </a>
+              <a
+                href="https://instagram.com/itsdavehimself/"
+                target="_blank"
                 className={styles['social-btn']}
                 onMouseEnter={handleHoverEmail}
                 onMouseLeave={handleHoverEmailLeave}
+                rel="noreferrer"
               >
                 <div className={styles['social-icon']}>
                   <InstagramLogo />
                 </div>
-              </button>
+              </a>
             </motion.div>
             <motion.div
               className={styles.email}
