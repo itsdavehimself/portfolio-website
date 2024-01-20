@@ -5,16 +5,15 @@ const rememberTechStack = ['React', 'TypeScript', 'Sass', 'Vite'];
 const rememberKeyFeatures = [
   {
     name: 'Interconnected Gameplay Mechanics:',
-    description: `At the heart of the game is a dynamic "gameState" object that encapsulates the user's progress and decisions. The player's choices intricately shape the unlocking of new mechanics and upgrades, influencing both the timing and speed at which these elements become available. This interconnected system creates a personalized and evolving gaming experience based on individual player strategies and decisions. Notably, a featured game mechanic involves a simon-says-like game, serving as part of a decryption method to unlock an in-game cryptocurrency.`,
+    description: `The game's core is the dynamic "gameState" object, tracking user progress. Player choices drive mechanic and upgrade unlocking, determining availability speed. This system allows players to create individual strategies. A key mechanic is a simon-says-like game, part of a decryption method to unlock in-game cryptocurrency.`,
   },
   {
     name: 'TypeScript & React Integration:',
-    description: `The game is built on the foundations of TypeScript integrated with React. TypeScript's strong typing offers a structured & reliable environment for implementing game logic. This integration simplifies development, ensuring a smooth and manageable project. I wanted to utilize more modern technologies for efficiency and a more enjoyable game development experience.
-`,
+    description: `The game combines TypeScript and React for reliable game logic in a streamlined development process, utilizing modern technologies for efficiency and a smooth experience.`,
   },
   {
     name: 'Responsive Design for Seamless Gaming:',
-    description: `Experience a smooth gaming journey on various devices. The game is playable on both desktop and on mobile because the responsive design ensures a user-friendly interface, making gameplay enjoyable wherever you are. On mobile, the game features a simple tabbing structure for quick navigation, while the desktop version keeps things neatly organized in a straightforward bento-box layout.`,
+    description: `Enjoy seamless gaming on desktop and mobile. Responsive design ensures a user-friendly interface, featuring simple tabbing for mobile and a neat bento-box layout for desktop convenience.`,
   },
   {
     name: 'Local Storage & Base64 Encoding:',
