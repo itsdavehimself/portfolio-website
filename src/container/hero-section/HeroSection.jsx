@@ -1,11 +1,10 @@
 import headshotColor from '../../assets/headshot-color.jpg';
 import styles from './HeroSection.module.css';
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import IntroSequence from '../../components/intro-sequence/IntroSequence';
 import ScrollDown from '../../components/scroll-down/ScrollDown';
 import PropTypes from 'prop-types';
 import { useRef } from 'react';
-import { useScroll } from 'framer-motion';
 
 export default function HeroSection() {
   const heroContainer = useRef(null);
