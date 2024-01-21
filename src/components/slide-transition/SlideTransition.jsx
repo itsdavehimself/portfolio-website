@@ -1,32 +1,29 @@
 import styles from './SlideTransition.module.css';
 import { motion, animate, easeInOut } from 'framer-motion';
-import { useEffect, useRef, useContext } from 'react';
+import { useEffect, useRef } from 'react';
 import propTypes from 'prop-types';
-import { CustomCursorContext } from '../../context/CustomCursorContext';
 
 export default function SlideTransition({ isTransitioning }) {
   const sliderRef = useRef(null);
-  const { setType } = useContext(CustomCursorContext);
 
   useEffect(() => {
     const sliderElement = sliderRef.current;
 
     const sequence = [
-      [sliderElement, { y: 0 }, { duration: 1, ease: easeInOut }],
+      [sliderElement, { y: 0 }, { duration: 0.75, ease: easeInOut }],
       [
         sliderElement,
         { y: -window.innerHeight },
-        { delay: 1, duration: 1, ease: easeInOut },
+        { delay: 0.75, duration: 0.75, ease: easeInOut },
       ],
     ];
 
     if (isTransitioning) {
       animate(sequence);
-      setType('hidden');
       document.body.style.overflow = 'hidden';
       setTimeout(() => {
         document.body.style.overflow = 'visible';
-      }, 3000);
+      }, 2000);
     } else return;
   }, [isTransitioning]);
 
