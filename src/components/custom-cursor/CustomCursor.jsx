@@ -30,9 +30,12 @@ const CustomCursor = () => {
       positionRef.current.mouseY = clientY;
       positionRef.current.destinationX = positionRef.current.mouseX;
       positionRef.current.destinationY = positionRef.current.mouseY;
-      mainCursor.current.style.transform = `translate3d(${
-        positionRef.current.mouseX + offset
-      }px, ${positionRef.current.mouseY + offset}px, 0)`;
+      const cursor = mainCursor.current;
+      if (cursor) {
+        cursor.style.transform = `translate3d(${
+          positionRef.current.mouseX + offset
+        }px, ${positionRef.current.mouseY + offset}px, 0)`;
+      }
     };
 
     document.addEventListener('mousemove', handleMouseMove);
