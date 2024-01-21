@@ -4,6 +4,7 @@ import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProjectDetailPage.module.css';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
 const ProjectDetailPage = ({
   projectName,
@@ -18,6 +19,7 @@ const ProjectDetailPage = ({
   liveURL,
 }) => {
   const { setType } = useContext(CustomCursorContext);
+  const customEase = [0.16, 0.5, 0.2, 1];
 
   const handleNavBtnHover = () => {
     setType('nav-hover');
@@ -31,12 +33,32 @@ const ProjectDetailPage = ({
     setType('default');
   }, []);
 
+  const createVariant = (delay) => ({
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        y: { delay, duration: 0.75, ease: customEase },
+        opacity: { delay, duration: 0.75, ease: customEase },
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+  });
+
   return (
     <>
       <CustomCursor />
       <div className={styles['project-details-container']}>
         <nav className={styles['project-details-navbar']}>
-          <div className={styles['home-nav']}>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={createVariant(1)}
+            className={styles['home-nav']}
+          >
             <Link to="/">
               <button
                 onMouseEnter={handleNavBtnHover}
@@ -46,8 +68,13 @@ const ProjectDetailPage = ({
                 HOME
               </button>
             </Link>
-          </div>
-          <div className={styles['project-nav']}>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={createVariant(1)}
+            className={styles['project-nav']}
+          >
             <a href={repoURL} target="_blank" rel="noreferrer">
               <button
                 onMouseEnter={handleNavBtnHover}
@@ -66,17 +93,33 @@ const ProjectDetailPage = ({
                 LIVE SITE
               </button>
             </a>
-          </div>
+          </motion.div>
         </nav>
         <div className={styles['project-details-hero']}>
           <div className={styles['project-details']}>
-            <h2>{projectName}</h2>
-            <div className={styles['info-block']}>
+            <motion.h2
+              initial="hidden"
+              animate="visible"
+              variants={createVariant(0.85)}
+            >
+              {projectName}
+            </motion.h2>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={createVariant(0.75)}
+              className={styles['info-block']}
+            >
               <p>{projectDescription}</p>
-            </div>
+            </motion.div>
           </div>
           <div className={styles['tech-block']}>
-            <div className={styles['info-block']}>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={createVariant(0.85)}
+              className={styles['info-block']}
+            >
               <h3>TECH STACK</h3>
               <div className={styles['tech-stack']}>
                 {techStack.map((tech, index) => (
@@ -85,20 +128,30 @@ const ProjectDetailPage = ({
                   </div>
                 ))}
               </div>
-            </div>
-            <div className={styles['info-block']}>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={createVariant(0.75)}
+              className={styles['info-block']}
+            >
               <h3>YEAR</h3>
               <p>{year}</p>
-            </div>
+            </motion.div>
           </div>
         </div>
-        <div className={styles['project-img-container']}>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={createVariant(0.65)}
+          className={styles['project-img-container']}
+        >
           <img
             src={imgSrc}
             alt={imgAlt}
             className={styles['project-img-landscape']}
           ></img>
-        </div>
+        </motion.div>
         <div className={styles['features-challenges-container']}>
           <div className={styles['info-block']}>
             <h3>KEY FEATURES</h3>
