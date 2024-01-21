@@ -11,6 +11,7 @@ import propTypes from 'prop-types';
 
 export default function Projects({ setIsTransitioning }) {
   const navigate = useNavigate();
+  const navigateDelayTime = 1000;
   const [hoveredProject, setHoveredProject] = useState(null);
   const { setType } = useContext(CustomCursorContext);
   const projectsContainer = useRef(null);
@@ -84,7 +85,7 @@ export default function Projects({ setIsTransitioning }) {
 
       setTimeout(() => {
         setIsTransitioning(false);
-      }, 5000);
+      }, 3000);
     },
     [history],
   );
@@ -145,7 +146,11 @@ export default function Projects({ setIsTransitioning }) {
         <div className={styles['projects-main']}>
           <div className={styles['projects-titles']}>
             <div className={styles['project-title-container']}>
-              <Link onClick={() => handleClick('/projects/chainseeker', 2000)}>
+              <Link
+                onClick={() =>
+                  handleClick('/projects/chainseeker', navigateDelayTime)
+                }
+              >
                 <h3
                   onMouseEnter={handleHoverFirstProject}
                   onMouseLeave={handleHoverFirstProjectLeave}
@@ -162,7 +167,11 @@ export default function Projects({ setIsTransitioning }) {
               </Link>
             </div>
             <div className={styles['project-title-container']}>
-              <Link onClick={() => handleClick('/projects/1337market', 2000)}>
+              <Link
+                onClick={() =>
+                  handleClick('/projects/1337market', navigateDelayTime)
+                }
+              >
                 <h3
                   onMouseEnter={handleHoverSecondProject}
                   onMouseLeave={handleHoverSecondProjectLeave}
@@ -179,7 +188,11 @@ export default function Projects({ setIsTransitioning }) {
               </Link>
             </div>
             <div className={styles['project-title-container']}>
-              <Link onClick={() => handleClick('/projects/remember', 2000)}>
+              <Link
+                onClick={() =>
+                  handleClick('/projects/remember', navigateDelayTime)
+                }
+              >
                 <h3
                   onMouseEnter={handleHoverThirdProject}
                   onMouseLeave={handleHoverThirdProjectLeave}
