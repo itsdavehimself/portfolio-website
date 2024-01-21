@@ -1,7 +1,13 @@
 import './App.css';
 import { CustomCursorContextProvider } from './context/CustomCursorContext';
-import { useScroll, useMotionValueEvent } from 'framer-motion';
-import { useState } from 'react';
+import {
+  useScroll,
+  useMotionValueEvent,
+  motion,
+  animate,
+  easeInOut,
+} from 'framer-motion';
+import { useState, useEffect } from 'react';
 import CustomCursor from './components/custom-cursor/CustomCursor';
 import Navbar from './components/navbar/Navbar';
 import HeroSection from './container/hero-section/HeroSection';
@@ -34,10 +40,12 @@ import {
 import chainseekerLandscapeImg from './assets/chainseeker-mockup-landscape.jpg';
 import shoppingCartLandscapeImg from './assets/1337market-mockup-landscape.jpg';
 import rememberLandscapeImg from './assets/remember-mockup-landscape.jpg';
+import SlideTransition from './components/slide-transition/SlideTransition';
 
 function App() {
   const { scrollY } = useScroll();
   const [scrollPosition, setScrollPosition] = useState(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setScrollPosition(latest);
@@ -47,6 +55,11 @@ function App() {
     <CustomCursorContextProvider>
       <BrowserRouter>
         <ScrollToTop />
+        <div className="slider-div">
+          {isTransitioning && (
+            <SlideTransition isTransitioning={isTransitioning} />
+          )}
+        </div>
         <Routes>
           <Route
             path="/"
@@ -57,7 +70,7 @@ function App() {
                 <Navbar />
                 <HeroSection scrollPosition={scrollPosition} />
                 <AboutMe scrollPosition={scrollPosition} />
-                <Projects />
+                <Projects setIsTransitioning={setIsTransitioning} />
                 <Skills />
                 <ContactMe />
               </div>

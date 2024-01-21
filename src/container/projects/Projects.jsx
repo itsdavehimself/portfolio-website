@@ -1,13 +1,16 @@
 import styles from './Projects.module.css';
-import { useContext, useRef, useState } from 'react';
+import { useContext, useRef, useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
 import { useScroll, motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import chainseekerImg from '../../assets/chainseeker-mockup-portrait.jpg';
 import shoppingCartImg from '../../assets/1337market-mockup-portrait.jpg';
 import rememberImg from '../../assets/remember-mockup-portrait.jpg';
+import propTypes from 'prop-types';
 
-export default function Projects() {
+export default function Projects({ setIsTransitioning }) {
+  const navigate = useNavigate();
   const [hoveredProject, setHoveredProject] = useState(null);
   const { setType } = useContext(CustomCursorContext);
   const projectsContainer = useRef(null);
@@ -71,6 +74,21 @@ export default function Projects() {
     exit: { opacity: 0, y: 50, transition: { duration: 0.1 } },
   };
 
+  const handleClick = useCallback(
+    (to, delay) => {
+      setIsTransitioning(true);
+
+      setTimeout(() => {
+        navigate(to);
+      }, delay);
+
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 5000);
+    },
+    [history],
+  );
+
   return (
     <section ref={projectsContainer} id="#projects">
       <div
@@ -127,7 +145,7 @@ export default function Projects() {
         <div className={styles['projects-main']}>
           <div className={styles['projects-titles']}>
             <div className={styles['project-title-container']}>
-              <Link to="/projects/chainseeker">
+              <Link onClick={() => handleClick('/projects/chainseeker', 2000)}>
                 <h3
                   onMouseEnter={handleHoverFirstProject}
                   onMouseLeave={handleHoverFirstProjectLeave}
@@ -144,7 +162,7 @@ export default function Projects() {
               </Link>
             </div>
             <div className={styles['project-title-container']}>
-              <Link to="/projects/1337market">
+              <Link onClick={() => handleClick('/projects/1337market', 2000)}>
                 <h3
                   onMouseEnter={handleHoverSecondProject}
                   onMouseLeave={handleHoverSecondProjectLeave}
@@ -161,7 +179,7 @@ export default function Projects() {
               </Link>
             </div>
             <div className={styles['project-title-container']}>
-              <Link to="/projects/remember">
+              <Link onClick={() => handleClick('/projects/remember', 2000)}>
                 <h3
                   onMouseEnter={handleHoverThirdProject}
                   onMouseLeave={handleHoverThirdProjectLeave}
@@ -245,3 +263,7 @@ export default function Projects() {
     </section>
   );
 }
+
+Projects.propTypes = {
+  setIsTransitioning: propTypes.func,
+};
