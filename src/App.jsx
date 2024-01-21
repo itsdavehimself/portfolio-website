@@ -1,13 +1,7 @@
 import './App.css';
 import { CustomCursorContextProvider } from './context/CustomCursorContext';
-import {
-  useScroll,
-  useMotionValueEvent,
-  motion,
-  animate,
-  easeInOut,
-} from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useScroll, useMotionValueEvent } from 'framer-motion';
+import { useState } from 'react';
 import CustomCursor from './components/custom-cursor/CustomCursor';
 import Navbar from './components/navbar/Navbar';
 import HeroSection from './container/hero-section/HeroSection';
@@ -55,11 +49,11 @@ function App() {
     <CustomCursorContextProvider>
       <BrowserRouter>
         <ScrollToTop />
-        <div className="slider-div">
-          {isTransitioning && (
+        {isTransitioning && (
+          <div className="slider-div">
             <SlideTransition isTransitioning={isTransitioning} />
-          )}
-        </div>
+          </div>
+        )}
         <Routes>
           <Route
             path="/"
