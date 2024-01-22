@@ -12,7 +12,6 @@ import Skills from './container/skills/Skills';
 import ContactMe from './container/contact-me/ContactMe';
 import ProjectDetailPage from './components/project-details-page/ProjectDetailPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ScrollToTop from './utility/scrollToTop';
 import {
   chainseekerDescription,
   chainseekerTechStack,
@@ -38,6 +37,7 @@ import shoppingCartPortraitImg from './assets/1337market-mockup-portrait.jpg';
 import rememberLandscapeImg from './assets/remember-mockup-landscape.jpg';
 import rememberPortraitImg from './assets/remember-mockup-portrait.jpg';
 import SlideTransition from './components/slide-transition/SlideTransition';
+import { ScrollToTop } from './utility/scrollToTop';
 
 function App() {
   const { scrollY } = useScroll();
