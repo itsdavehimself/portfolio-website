@@ -37,7 +37,7 @@ import shoppingCartPortraitImg from './assets/1337market-mockup-portrait.jpg';
 import rememberLandscapeImg from './assets/remember-mockup-landscape.jpg';
 import rememberPortraitImg from './assets/remember-mockup-portrait.jpg';
 import SlideTransition from './components/slide-transition/SlideTransition';
-import { ScrollToTop } from './utility/scrollToTop';
+import { ScrollToTop } from './utility/ScrollToTop';
 
 function App() {
   const { scrollY } = useScroll();
