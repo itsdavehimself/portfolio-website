@@ -84,12 +84,7 @@ export default function SideDots({ scrollPosition }) {
         width: '0rem',
       });
     } else if (scrollPosition <= 3000) {
-      setLineHeight(
-        Math.min(
-          scrollPosition / (isTabletScreen ? 17 : 16),
-          2100 / (isTabletScreen ? 17 : 16),
-        ),
-      );
+      setLineHeight(Math.min(scrollPosition / 17), 2100 / 17);
       setThirdDotProperties({
         color: 'rgb(239, 239, 239)',
         height: '0.85rem',
@@ -101,7 +96,7 @@ export default function SideDots({ scrollPosition }) {
         width: '0rem',
       });
     } else if (scrollPosition <= 3900) {
-      setLineHeight(3100 / (isTabletScreen ? 17 : 16));
+      setLineHeight(3100 / 17);
       setFourthDotProperties({
         color: 'rgb(239, 239, 239)',
         height: '0.85rem',
@@ -113,7 +108,7 @@ export default function SideDots({ scrollPosition }) {
         width: '0rem',
       });
     } else {
-      setLineHeight(4100 / (isTabletScreen ? 17 : 16));
+      setLineHeight(4100 / 17);
       setFifthDotProperties({
         color: 'rgb(239, 239, 239)',
         height: '0.85rem',
