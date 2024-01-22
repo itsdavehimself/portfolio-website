@@ -140,6 +140,7 @@ h1 {
 
   .tagline {
     align-self: center;
+    margin-right: 1rem;
     span {
       color: #efefef;
       margin: 0;
