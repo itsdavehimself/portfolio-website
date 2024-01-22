@@ -23,6 +23,11 @@ export default function ContactMe() {
     offset: ['end end', 'start .15'],
   });
 
+  const { scrollYProgress: socialProgress } = useScroll({
+    target: contactContainer,
+    offset: ['end end', 'start start'],
+  });
+
   const handleHoverEmail = () => {
     setType('hover-social');
   };
@@ -105,10 +110,10 @@ export default function ContactMe() {
           <div className={styles['contact-links']}>
             <motion.div
               className={styles.socials}
-              initial={{ opacity: 0, transform: `translateY(5rem)` }}
-              whileInView={{ opacity: 1, transform: `translateY(0)` }}
-              transition={{ duration: 0.3 }}
-              viewport={{ amount: 0.8 }}
+              style={{
+                transform: `translateY(${socialProgress.current * 8}rem)`,
+                opacity: 1 - socialProgress.current,
+              }}
             >
               <a
                 href="https://github.com/itsdavehimself"
@@ -149,10 +154,10 @@ export default function ContactMe() {
             </motion.div>
             <motion.div
               className={styles.email}
-              initial={{ opacity: 0, transform: `translateY(5rem)` }}
-              whileInView={{ opacity: 1, transform: `translateY(0)` }}
-              transition={{ duration: 0.4 }}
-              viewport={{ amount: 0.8 }}
+              style={{
+                transform: `translateY(${socialProgress.current * 4}rem)`,
+                opacity: 1 - socialProgress.current,
+              }}
             >
               <button
                 className={styles['email-btn']}

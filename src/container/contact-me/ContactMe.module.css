@@ -78,6 +78,7 @@
   gap: 1rem;
   height: 100%;
   width: 50%;
+  overflow: hidden;
 }
 
 .email {
@@ -87,6 +88,7 @@
   height: 100%;
   width: 50%;
   padding-right: 11rem;
+  overflow: hidden;
 }
 
 .email-btn {
@@ -154,6 +156,7 @@
   .contact-links {
     display: flex;
     flex-direction: column;
+    height: 40%;
   }
 
   .socials {
