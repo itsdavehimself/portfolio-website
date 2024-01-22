@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
 export default function GitLogo() {
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 767);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 480);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 767);
+      setIsSmallScreen(window.innerWidth <= 480);
     };
 
     window.addEventListener('resize', handleResize);
