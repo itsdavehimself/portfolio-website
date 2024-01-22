@@ -31,8 +31,14 @@
   width: 0.85rem;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 480) {
   .side-dot-animation {
     display: none;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .side-dot-animation {
+    transform: scale(0.8);
+    right: 0rem;
   }
 }
