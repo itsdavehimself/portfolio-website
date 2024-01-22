@@ -36,11 +36,20 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
   .sentence {
     text-align: center;
     span {
       font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .sentence {
+    text-align: center;
+    span {
+      font-size: 1.4rem;
     }
   }
 }

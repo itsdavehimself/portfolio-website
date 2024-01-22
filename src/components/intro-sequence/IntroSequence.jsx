@@ -10,19 +10,32 @@ export default function IntroSequence() {
   const [isCloseQuoteVisible, setIsCloseQuoteVisible] = useState(true);
   const { setType } = useContext(CustomCursorContext);
 
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 767);
+  const isSmallScreen = window.innerWidth <= 480;
+  const isMediumScreen = window.innerWidth > 481 && window.innerWidth < 769;
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 767);
-    };
+  const xOpenValue = isSmallScreen
+    ? '-6.5rem'
+    : isMediumScreen
+      ? '-11rem'
+      : '-21.4rem';
 
-    window.addEventListener('resize', handleResize);
+  const yOpenValue = isSmallScreen
+    ? '-3.5rem'
+    : isMediumScreen
+      ? '-2rem'
+      : '-1rem';
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const xCloseValue = isSmallScreen
+    ? '6rem'
+    : isMediumScreen
+      ? '10.5rem'
+      : '21rem';
+
+  const yCloseValue = isSmallScreen
+    ? '3.5rem'
+    : isMediumScreen
+      ? '2rem'
+      : '1rem';
 
   const sentence =
     'You have to trust that the dots will somehow connect in your future.';
@@ -68,13 +81,13 @@ export default function IntroSequence() {
       ],
       [
         '.open-quotes',
-        { y: isSmallScreen ? '-3.5rem' : '-1rem' },
+        { y: yOpenValue },
         { delay: 0.05, duration: 0.1, ease: customEase },
       ],
       [
         '.open-quotes',
         {
-          x: isSmallScreen ? '-6.5rem' : '-21.4rem',
+          x: xOpenValue,
           opacity: 0.15,
           scale: 0.5,
         },
@@ -90,13 +103,13 @@ export default function IntroSequence() {
       ],
       [
         '.close-quotes',
-        { y: isSmallScreen ? '3.5rem' : '1rem' },
+        { y: yCloseValue },
         { delay: 0.05, duration: 0.1, ease: customEase },
       ],
 
       [
         '.close-quotes',
-        { x: isSmallScreen ? '6rem' : '21rem', opacity: 0.15, scale: 0.5 },
+        { x: xCloseValue, opacity: 0.15, scale: 0.5 },
         { delay: 0.05, duration: 0.15, ease: customEase },
       ],
     ];
