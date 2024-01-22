@@ -174,7 +174,7 @@
 
   .projects-titles {
     gap: 4rem;
-    padding-left: 2rem;
+    padding-left: 1rem;
   }
 
   .project-title {
@@ -185,7 +185,7 @@
   }
 
   .project-title-container:hover {
-    transform: translateX(1rem);
+    transform: translateX(0.8rem);
     transition: all 0.4s ease-in-out;
   }
 
