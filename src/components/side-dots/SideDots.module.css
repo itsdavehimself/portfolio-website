@@ -33,8 +33,6 @@
 
 @media (max-width: 767px) {
   .side-dot-animation {
-    right: 0rem;
-    width: 37px;
-    transform: scale(0.6);
+    display: none;
   }
 }
