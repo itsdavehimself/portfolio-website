@@ -11,6 +11,7 @@ const ProjectDetailPage = ({
   projectDescription,
   techStack,
   year,
+  mobileImgSrc,
   imgSrc,
   imgAlt,
   keyFeatures,
@@ -96,6 +97,18 @@ const ProjectDetailPage = ({
           </motion.div>
         </nav>
         <div className={styles['project-details-hero']}>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={createVariant(0.85)}
+            className={styles['mobile-img-container']}
+          >
+            <img
+              src={mobileImgSrc}
+              alt={imgAlt}
+              className={styles['project-img-portrait']}
+            ></img>
+          </motion.div>
           <div className={styles['project-details']}>
             <motion.h2
               initial="hidden"
@@ -186,6 +199,7 @@ ProjectDetailPage.propTypes = {
   projectDescription: PropTypes.string,
   techStack: PropTypes.array,
   year: PropTypes.string,
+  mobileImgSrc: PropTypes.string,
   imgSrc: PropTypes.string,
   imgAlt: PropTypes.string,
   keyFeatures: PropTypes.array,

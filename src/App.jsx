@@ -32,8 +32,11 @@ import {
   rememberChallenges,
 } from './data/remember-project-data';
 import chainseekerLandscapeImg from './assets/chainseeker-mockup-landscape.jpg';
+import chainseekerPortraitImg from './assets/chainseeker-mockup-portrait.jpg';
 import shoppingCartLandscapeImg from './assets/1337market-mockup-landscape.jpg';
+import shoppingCartPortraitImg from './assets/1337market-mockup-portrait.jpg';
 import rememberLandscapeImg from './assets/remember-mockup-landscape.jpg';
+import rememberPortraitImg from './assets/remember-mockup-portrait.jpg';
 import SlideTransition from './components/slide-transition/SlideTransition';
 
 function App() {
@@ -78,6 +81,7 @@ function App() {
                 projectDescription={chainseekerDescription}
                 techStack={chainseekerTechStack}
                 year={'2023'}
+                mobileImgSrc={chainseekerPortraitImg}
                 imgSrc={chainseekerLandscapeImg}
                 imgAlt={'chainseeker app'}
                 keyFeatures={chainseekerKeyFeatures}
@@ -97,6 +101,7 @@ function App() {
                 projectDescription={shoppingCartDescription}
                 techStack={shoppingCartTechStack}
                 year={'2023'}
+                mobileImgSrc={shoppingCartPortraitImg}
                 imgSrc={shoppingCartLandscapeImg}
                 imgAlt={'1337market app'}
                 keyFeatures={shoppingCartKeyFeatures}
@@ -114,6 +119,7 @@ function App() {
                 projectDescription={rememberDescription}
                 techStack={rememberTechStack}
                 year={'2024'}
+                mobileImgSrc={rememberPortraitImg}
                 imgSrc={rememberLandscapeImg}
                 imgAlt={'1337market app'}
                 keyFeatures={rememberKeyFeatures}

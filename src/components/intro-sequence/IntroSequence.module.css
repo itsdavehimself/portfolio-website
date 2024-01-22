@@ -35,3 +35,10 @@
     color: #0f0f0f;
   }
 }
+
+@media (max-width: 767px) {
+  .sentence {
+    text-align: center;
+    font-size: 1rem;
+  }
+}

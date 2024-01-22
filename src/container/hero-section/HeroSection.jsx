@@ -208,6 +208,7 @@ export default function HeroSection() {
             initial="hidden"
             animate="visible"
             variants={imageComponent}
+            className={styles['image-div']}
           >
             <img
               className={styles['hero-image']}

@@ -93,3 +93,46 @@
   gap: 1rem;
   font-size: 0.8rem;
 }
+
+@media (max-width: 767px) {
+  .skills-container {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .skills-aside {
+    transform: rotate(-90deg) translateX(-20rem) translateY(-11.5rem);
+    margin-left: 2rem;
+  }
+
+  .skills-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: -1.2rem;
+  }
+
+  .skills-main-header {
+    font-size: 2rem;
+  }
+
+  .web-dev-logos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding-bottom: 4rem;
+    font-size: 0.9rem;
+  }
+
+  .main-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem 1.2rem 1rem;
+  }
+}

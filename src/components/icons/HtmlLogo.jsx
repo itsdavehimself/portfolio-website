@@ -1,8 +1,24 @@
+import { useState, useEffect } from 'react';
+
 export default function HtmlLogo() {
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 767);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 767);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <svg
-      height="4rem"
-      width="4rem"
+      height={isSmallScreen ? '2rem' : '4rem'}
+      width={isSmallScreen ? '2rem' : '4rem'}
       viewBox="-1 0 20 20"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"

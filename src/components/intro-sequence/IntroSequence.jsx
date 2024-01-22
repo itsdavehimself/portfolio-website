@@ -10,6 +10,20 @@ export default function IntroSequence() {
   const [isCloseQuoteVisible, setIsCloseQuoteVisible] = useState(true);
   const { setType } = useContext(CustomCursorContext);
 
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 767);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 767);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const sentence =
     'You have to trust that the dots will somehow connect in your future.';
 
@@ -54,12 +68,16 @@ export default function IntroSequence() {
       ],
       [
         '.open-quotes',
-        { y: '-1rem' },
+        { y: isSmallScreen ? '-3.5rem' : '-1rem' },
         { delay: 0.05, duration: 0.1, ease: customEase },
       ],
       [
         '.open-quotes',
-        { x: '-21.4rem', opacity: 0.15, scale: 0.5 },
+        {
+          x: isSmallScreen ? '-7.5rem' : '-21.4rem',
+          opacity: 0.15,
+          scale: 0.5,
+        },
         { delay: 0.05, duration: 0.15, ease: customEase },
       ],
     ];
@@ -72,13 +90,13 @@ export default function IntroSequence() {
       ],
       [
         '.close-quotes',
-        { y: '1rem' },
+        { y: isSmallScreen ? '3.5rem' : '1rem' },
         { delay: 0.05, duration: 0.1, ease: customEase },
       ],
 
       [
         '.close-quotes',
-        { x: '21rem', opacity: 0.15, scale: 0.5 },
+        { x: isSmallScreen ? '7rem' : '21rem', opacity: 0.15, scale: 0.5 },
         { delay: 0.05, duration: 0.15, ease: customEase },
       ],
     ];

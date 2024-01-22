@@ -30,3 +30,11 @@
   height: 0.85rem;
   width: 0.85rem;
 }
+
+@media (max-width: 767px) {
+  .side-dot-animation {
+    right: 0rem;
+    width: 35px;
+    transform: scale(0.6);
+  }
+}

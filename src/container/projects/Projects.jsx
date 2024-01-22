@@ -151,10 +151,9 @@ export default function Projects({ setIsTransitioning }) {
                   handleClick('/projects/chainseeker', navigateDelayTime)
                 }
               >
-                <h3
+                <div
                   onMouseEnter={handleHoverFirstProject}
                   onMouseLeave={handleHoverFirstProjectLeave}
-                  className={styles['project-title']}
                   style={{
                     transform: `translateY(${
                       projectTitleProgress.current * 8
@@ -162,8 +161,11 @@ export default function Projects({ setIsTransitioning }) {
                     opacity: 1 - projectTitleProgress.current,
                   }}
                 >
-                  CHAINSEEKER
-                </h3>
+                  <h3 className={styles['project-title']}>CHAINSEEKER</h3>
+                  <p className={styles['mobile-descriptions']}>
+                    FULL-STACK APPLICATION
+                  </p>
+                </div>
               </Link>
             </div>
             <div className={styles['project-title-container']}>
@@ -172,10 +174,9 @@ export default function Projects({ setIsTransitioning }) {
                   handleClick('/projects/1337market', navigateDelayTime)
                 }
               >
-                <h3
+                <div
                   onMouseEnter={handleHoverSecondProject}
                   onMouseLeave={handleHoverSecondProjectLeave}
-                  className={styles['project-title']}
                   style={{
                     transform: `translateY(${
                       projectTitleProgress.current * 8
@@ -183,8 +184,11 @@ export default function Projects({ setIsTransitioning }) {
                     opacity: 1 - projectTitleProgress.current,
                   }}
                 >
-                  1337MARKET
-                </h3>
+                  <h3 className={styles['project-title']}>1337MARKET</h3>
+                  <p className={styles['mobile-descriptions']}>
+                    FRONT-END SHOPPING CART
+                  </p>
+                </div>
               </Link>
             </div>
             <div className={styles['project-title-container']}>
@@ -193,10 +197,9 @@ export default function Projects({ setIsTransitioning }) {
                   handleClick('/projects/remember', navigateDelayTime)
                 }
               >
-                <h3
+                <div
                   onMouseEnter={handleHoverThirdProject}
                   onMouseLeave={handleHoverThirdProjectLeave}
-                  className={styles['project-title']}
                   style={{
                     transform: `translateY(${
                       projectTitleProgress.current * 8
@@ -204,8 +207,11 @@ export default function Projects({ setIsTransitioning }) {
                     opacity: 1 - projectTitleProgress.current,
                   }}
                 >
-                  RE:MEMBER
-                </h3>
+                  <h3 className={styles['project-title']}>RE:MEMBER</h3>
+                  <p className={styles['mobile-descriptions']}>
+                    INCREMENTAL/IDLE BROWSER GAME
+                  </p>
+                </div>
               </Link>
             </div>
           </div>
