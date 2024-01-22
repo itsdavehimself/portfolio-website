@@ -73,6 +73,10 @@
   }
 }
 
+.mobile-img-container {
+  display: none;
+}
+
 .project-details {
   h2 {
     font-size: 6rem;
