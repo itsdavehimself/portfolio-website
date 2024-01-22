@@ -39,6 +39,8 @@
 @media (max-width: 767px) {
   .sentence {
     text-align: center;
-    font-size: 1rem;
+    span {
+      font-size: 1rem;
+    }
   }
 }
