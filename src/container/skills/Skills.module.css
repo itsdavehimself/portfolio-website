@@ -103,8 +103,8 @@
   }
 
   .skills-aside {
-    transform: rotate(-90deg) translateX(-20rem) translateY(-11.5rem);
-    margin-left: 2rem;
+    transform: rotate(-90deg) translateX(-16rem) translateY(-11.5rem) scale(0.8);
+    margin-left: 4.8rem;
   }
 
   .skills-main {
@@ -113,6 +113,7 @@
     justify-content: center;
     align-items: center;
     margin-left: -1.2rem;
+    transform: scale(0.9);
   }
 
   .skills-main-header {

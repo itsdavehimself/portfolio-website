@@ -120,11 +120,16 @@ h2 {
     grid-template-columns: 3rem 1fr;
     height: 100vh;
     width: 100vw;
+    margin-bottom: 8rem;
   }
 
   .about-me-aside {
-    transform: rotate(-90deg) translateX(-20rem) translateY(-11.5rem);
-    margin-left: 2rem;
+    transform: rotate(-90deg) translateX(-16rem) translateY(-11.5rem) scale(0.8);
+    margin-left: 4.8rem;
+  }
+
+  .about-me-main {
+    margin-top: 8rem;
   }
 
   .about-me-header {
@@ -134,10 +139,10 @@ h2 {
     font-family: 'Avenir';
     font-weight: 700;
     line-height: 1;
-    font-size: 2rem;
-    height: 10%;
+    font-size: 1.6rem;
+    height: fit-content;
     padding: 0rem;
-    padding-top: 10rem;
+    padding-top: 0rem;
     margin-left: 0rem;
   }
 
@@ -146,10 +151,10 @@ h2 {
     flex-direction: column-reverse;
     margin-left: 0rem;
     padding-right: 3.5rem;
-    margin-top: 8rem;
-    height: 50%;
+    margin-top: 0rem;
+    height: fit-content;
     p {
-      font-size: 0.95rem;
+      font-size: 0.8rem;
       font-family: 'Avenir';
       font-weight: 100;
     }
@@ -159,7 +164,7 @@ h2 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 100%;
+    height: fit-content;
     width: 100%;
     margin-top: 3rem;
     margin-left: 0rem;

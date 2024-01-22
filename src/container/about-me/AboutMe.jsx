@@ -1,17 +1,34 @@
 import styles from './AboutMe.module.css';
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { CustomCursorContext } from '../../context/CustomCursorContext';
 import { useRef } from 'react';
 import { motion, useScroll } from 'framer-motion';
 
 export default function AboutMe() {
   const { setType } = useContext(CustomCursorContext);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 767);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 767);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const aboutMeContainer = useRef(null);
   const { scrollYProgress: fadeOutProgress } = useScroll({
     target: aboutMeContainer,
     offset: ['end 0.8', 'end .3'],
+  });
+  const { scrollYProgress: mobileFadeOutProgress } = useScroll({
+    target: aboutMeContainer,
+    offset: ['start start', '1 start'],
   });
   const { scrollYProgress: sidebarSlideInProgress } = useScroll({
     target: aboutMeContainer,
@@ -38,7 +55,11 @@ export default function AboutMe() {
     <section ref={aboutMeContainer} id="#about-me">
       <motion.div
         className={styles['about-me-container']}
-        style={{ opacity: 1 - fadeOutProgress.current }}
+        style={
+          isSmallScreen
+            ? { opacity: 1 - mobileFadeOutProgress.current }
+            : { opacity: 1 - fadeOutProgress.current }
+        }
       >
         <aside className={styles['about-me-aside']}>
           <div

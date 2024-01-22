@@ -171,19 +171,17 @@
     align-items: center;
   }
 
+  .project-nav {
+    column-gap: 1rem;
+  }
+
   .home-btn {
     width: 2rem;
   }
 
   .pill-btn {
-    font-size: 0.9rem;
-  }
-
-  .project-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 2rem;
+    font-size: 0.8rem;
+    padding: 1rem;
   }
 
   .project-details-hero {
@@ -225,6 +223,10 @@
 
   .project-img-container {
     display: none;
+  }
+
+  .mobile-img-container {
+    display: flex;
   }
 
   .project-img-portrait {
