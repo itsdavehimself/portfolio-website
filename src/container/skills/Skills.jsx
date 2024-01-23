@@ -19,6 +19,7 @@ import { useRef } from 'react';
 import { useScroll } from 'framer-motion';
 import SassLogo from '../../components/icons/SassLogo';
 import TsLogo from '../../components/icons/TsLogo';
+import VitestLogo from '../../components/icons/VitestLogo';
 
 export default function Skills() {
   const skillsContainer = useRef(null);
@@ -146,16 +147,16 @@ export default function Skills() {
               MongoDB
             </div>
             <div className={styles['main-icon']}>
+              <VitestLogo />
+              Vitest
+            </div>
+            <div className={styles['main-icon']}>
               <GitLogo />
               Git
             </div>
             <div className={styles['main-icon']}>
               <NpmLogo />
               npm
-            </div>
-            <div className={styles['main-icon']}>
-              <TerminalLogo />
-              Terminal
             </div>
           </div>
           <div style={{ overflow: 'hidden' }}>
