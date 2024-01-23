@@ -215,18 +215,9 @@
     transform: rotate(-90deg) translateX(-20rem) translateY(-10rem);
   }
 
-  .projects-main {
-    display: grid;
-    grid-template-columns: none;
-    grid-template-rows: 1fr 1fr;
-    height: 75%;
-    margin-top: 25%;
-    margin-right: 4rem;
-  }
-
   .projects-titles {
     gap: 0rem;
-    padding-left: 0rem;
+    padding-left: 4rem;
     justify-self: center;
   }
 
@@ -251,28 +242,15 @@
   }
 
   .project-description {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
   }
 
-  .project-card {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #efefef;
-    font-size: 1.5rem;
-    gap: 1rem;
-    padding-top: 0rem;
-  }
-
-  .project-image {
-    width: 90%;
-    height: auto;
-    background-color: #efefef;
-    border-radius: 1rem;
-    transition: all 0.3s ease-in-out;
+  .mobile-descriptions {
+    display: block;
+    margin: 0;
+    letter-spacing: 0.2rem;
+    font-size: 1rem;
+    padding-left: 0.2rem;
+    margin-top: -0.8rem;
   }
 }

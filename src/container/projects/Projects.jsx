@@ -12,8 +12,6 @@ import shoppingCartLandscapeImg from '../../assets/1337market-mockup-landscape.j
 import rememberLandscapeImg from '../../assets/remember-mockup-landscape.jpg';
 import propTypes from 'prop-types';
 
-const isSmallerScreen = window.innerWidth >= 769 && window.innerWidth <= 991;
-
 export default function Projects({ setIsTransitioning }) {
   const navigate = useNavigate();
   const navigateDelayTime = 1000;
@@ -237,9 +235,7 @@ export default function Projects({ setIsTransitioning }) {
                   className={styles['project-card']}
                 >
                   <img
-                    src={
-                      isSmallerScreen ? chainseekerLandscapeImg : chainseekerImg
-                    }
+                    src={chainseekerImg}
                     alt="chainseeker app"
                     className={styles['project-image']}
                   ></img>
@@ -257,11 +253,7 @@ export default function Projects({ setIsTransitioning }) {
                   className={styles['project-card']}
                 >
                   <img
-                    src={
-                      isSmallerScreen
-                        ? shoppingCartLandscapeImg
-                        : shoppingCartImg
-                    }
+                    src={shoppingCartImg}
                     alt="1337Market Project"
                     className={styles['project-image']}
                   ></img>{' '}
@@ -279,7 +271,7 @@ export default function Projects({ setIsTransitioning }) {
                   className={styles['project-card']}
                 >
                   <img
-                    src={isSmallerScreen ? rememberLandscapeImg : rememberImg}
+                    src={rememberImg}
                     alt="Remember Project"
                     className={styles['project-image']}
                   ></img>{' '}
