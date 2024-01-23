@@ -99,7 +99,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .projects-container {
     display: grid;
     grid-template-columns: 3rem 1fr;
@@ -151,7 +151,7 @@
   }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 601px) and (max-width: 900px) {
   .projects-container {
     display: grid;
     grid-template-columns: 3rem 1fr;
@@ -203,7 +203,7 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 991px) {
+@media screen and (min-width: 901px) and (max-width: 1200px) {
   .projects-container {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -252,5 +252,63 @@
     font-size: 1rem;
     padding-left: 0.2rem;
     margin-top: -0.8rem;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1800px) {
+  .projects-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 18rem;
+    gap: 20rem;
+    grid-template-columns: none;
+  }
+
+  .projects-titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding-left: 2rem;
+  }
+
+  .project-title {
+    font-size: 4.5rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .project-title-container:hover {
+    transform: translateX(1rem);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .project-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project-card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #efefef;
+    font-size: 1.2rem;
+    gap: 1rem;
+    padding-top: 5rem;
+    padding-right: 3.5rem;
+  }
+
+  .project-image {
+    height: 30rem;
+    width: 24rem;
+    background-color: #efefef;
+    border-radius: 1rem;
+    transition: all 0.3s ease-in-out;
   }
 }
