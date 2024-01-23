@@ -100,6 +100,18 @@ const ProjectDetailPage = ({
           <motion.div
             initial="hidden"
             animate="visible"
+            variants={createVariant(0.65)}
+            className={styles['tablet-img-container']}
+          >
+            <img
+              src={imgSrc}
+              alt={imgAlt}
+              className={styles['project-img-tablet']}
+            ></img>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
             variants={createVariant(0.85)}
             className={styles['mobile-img-container']}
           >
