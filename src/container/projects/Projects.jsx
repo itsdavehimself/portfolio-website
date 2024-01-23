@@ -7,7 +7,12 @@ import { Link } from 'react-router-dom';
 import chainseekerImg from '../../assets/chainseeker-mockup-portrait.jpg';
 import shoppingCartImg from '../../assets/1337market-mockup-portrait.jpg';
 import rememberImg from '../../assets/remember-mockup-portrait.jpg';
+import chainseekerLandscapeImg from '../../assets/chainseeker-mockup-landscape.jpg';
+import shoppingCartLandscapeImg from '../../assets/1337market-mockup-landscape.jpg';
+import rememberLandscapeImg from '../../assets/remember-mockup-landscape.jpg';
 import propTypes from 'prop-types';
+
+const isSmallerScreen = window.innerWidth >= 769 && window.innerWidth <= 991;
 
 export default function Projects({ setIsTransitioning }) {
   const navigate = useNavigate();
@@ -232,7 +237,9 @@ export default function Projects({ setIsTransitioning }) {
                   className={styles['project-card']}
                 >
                   <img
-                    src={chainseekerImg}
+                    src={
+                      isSmallerScreen ? chainseekerLandscapeImg : chainseekerImg
+                    }
                     alt="chainseeker app"
                     className={styles['project-image']}
                   ></img>
@@ -250,7 +257,11 @@ export default function Projects({ setIsTransitioning }) {
                   className={styles['project-card']}
                 >
                   <img
-                    src={shoppingCartImg}
+                    src={
+                      isSmallerScreen
+                        ? shoppingCartLandscapeImg
+                        : shoppingCartImg
+                    }
                     alt="1337Market Project"
                     className={styles['project-image']}
                   ></img>{' '}
@@ -268,8 +279,8 @@ export default function Projects({ setIsTransitioning }) {
                   className={styles['project-card']}
                 >
                   <img
-                    src={rememberImg}
-                    alt="1337Market Project"
+                    src={isSmallerScreen ? rememberLandscapeImg : rememberImg}
+                    alt="Remember Project"
                     className={styles['project-image']}
                   ></img>{' '}
                   <div>Incremental/Idle Browser Game</div>

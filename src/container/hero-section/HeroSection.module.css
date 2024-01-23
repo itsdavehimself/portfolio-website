@@ -227,3 +227,70 @@ h1 {
     display: none;
   }
 }
+@media (min-width: 769px) and (max-width: 991px) {
+  h1 {
+    font-size: 4rem;
+    margin: 0;
+    line-height: 0.8;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 0.3fr;
+    gap: 2rem;
+    margin: 0 4rem;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .fullstack {
+    align-self: flex-start;
+    padding-right: 0rem;
+    span {
+      font-size: 4rem;
+      margin: 0;
+      line-height: 0.8;
+      font-family: 'Avenir';
+      font-weight: 900;
+      color: #efefef;
+    }
+  }
+
+  .developer {
+    align-self: flex-start;
+    span {
+      font-size: 4rem;
+      margin: 0;
+      line-height: 0.8;
+      font-family: 'Avenir';
+      font-weight: 900;
+      color: #efefef;
+    }
+  }
+
+  .tagline {
+    margin: 0;
+    padding-left: 0.2rem;
+    align-self: flex-start;
+    span {
+      color: #efefef;
+      margin: 0;
+      font-size: 1rem;
+      font-family: 'Avenir';
+      font-weight: 100;
+      align-self: flex-start;
+    }
+  }
+
+  .hero-image {
+    border-radius: 2rem;
+    height: 16rem;
+    justify-self: center;
+    align-self: center;
+  }
+}

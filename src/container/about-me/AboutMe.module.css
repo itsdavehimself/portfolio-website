@@ -228,3 +228,73 @@ h2 {
     margin-left: 0rem;
   }
 }
+
+@media (min-width: 769px) and (max-width: 991px) {
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .about-me-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-me-aside {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transform: rotate(-90deg) translateX(-20rem) translateY(-10rem);
+    height: fit-content;
+  }
+
+  .about-me-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .about-me-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Avenir';
+    font-weight: 700;
+    line-height: 1;
+    font-size: 3rem;
+    height: 50%;
+    padding-top: 2rem;
+    padding-left: 0rem;
+    overflow: hidden;
+  }
+
+  .about-me {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-right: 5rem;
+    padding-left: 0rem;
+    margin-top: -8rem;
+    height: 50%;
+    p {
+      font-size: 1rem;
+      font-family: 'Avenir';
+      font-weight: 100;
+    }
+  }
+
+  .resume {
+    justify-content: flex-start;
+    margin-top: 0rem;
+    margin-left: 0rem;
+  }
+
+  .resume-btn {
+    background-color: #0f0f0f;
+    border: 2px #efefef solid;
+    border-radius: 5rem;
+    color: #efefef;
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in-out;
+  }
+}

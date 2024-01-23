@@ -42,3 +42,9 @@
     right: 0rem;
   }
 }
+
+@media (min-width: 769px) and (max-width: 991px) {
+  .side-dot-animation {
+    right: 0rem;
+  }
+}

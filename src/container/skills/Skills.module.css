@@ -186,3 +186,18 @@
     padding: 0 2rem 2rem 2rem;
   }
 }
+
+@media (min-width: 769px) and (max-width: 991px) {
+  .skills-aside {
+    transform: rotate(-90deg) translateX(-20rem) translateY(-10rem);
+  }
+  .skills-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    margin-left: -2.5rem;
+    transform: scale(0.8);
+  }
+}
