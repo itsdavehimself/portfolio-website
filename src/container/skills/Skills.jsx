@@ -6,9 +6,7 @@ import ReactLogo from '../../components/icons/ReactLogo';
 import TailwindLogo from '../../components/icons/Tailwind';
 import NodeLogo from '../../components/icons/NodeLogo';
 import MongoLogo from '../../components/icons/MonogLogo';
-import NpmLogo from '../../components/icons/NpmLogo';
 import GitLogo from '../../components/icons/GitLogo';
-import TerminalLogo from '../../components/icons/TerminalLogo';
 import Cinema4dLogo from '../../components/icons/Cinema4dLogo';
 import BlenderLogo from '../../components/icons/BlenderLogo';
 import OctaneLogo from '../../components/icons/OctaneLogo';
@@ -20,6 +18,7 @@ import { useScroll } from 'framer-motion';
 import SassLogo from '../../components/icons/SassLogo';
 import TsLogo from '../../components/icons/TsLogo';
 import VitestLogo from '../../components/icons/VitestLogo';
+import JestLogo from '../../components/icons/JestLogo';
 
 export default function Skills() {
   const skillsContainer = useRef(null);
@@ -151,12 +150,12 @@ export default function Skills() {
               Vitest
             </div>
             <div className={styles['main-icon']}>
-              <GitLogo />
-              Git
+              <JestLogo />
+              Jest
             </div>
             <div className={styles['main-icon']}>
-              <NpmLogo />
-              npm
+              <GitLogo />
+              Git
             </div>
           </div>
           <div style={{ overflow: 'hidden' }}>
