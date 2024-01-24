@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function SideDots({ scrollPosition }) {
   const [isVisible, setIsVisible] = useState(false);
   const [lineHeight, setLineHeight] = useState(0);
-
   const [secondDotProperties, setSecondDotProperties] = useState({
     color: 'rgba(15, 15, 15, 0)',
     height: '0rem',
@@ -31,18 +30,6 @@ export default function SideDots({ scrollPosition }) {
   });
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsTabletScreen(window.innerWidth <= 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
     setIsVisible(true);
 
     const timeoutId = setTimeout(() => {
@@ -57,12 +44,12 @@ export default function SideDots({ scrollPosition }) {
         width: '0rem',
       });
     } else if (scrollPosition <= 1100) {
-      setLineHeight(Math.min(scrollPosition / 16), 1100 / 16),
-        setSecondDotProperties({
-          color: 'rgb(239, 239, 239)',
-          height: '0.85rem',
-          width: '0.85rem',
-        });
+      setLineHeight(Math.min(scrollPosition / 16, 1100 / 16));
+      setSecondDotProperties({
+        color: 'rgb(239, 239, 239)',
+        height: '0.85rem',
+        width: '0.85rem',
+      });
     } else if (scrollPosition <= 2000) {
       setLineHeight(1100 / 16);
       setSecondDotProperties({
@@ -76,7 +63,7 @@ export default function SideDots({ scrollPosition }) {
         width: '0rem',
       });
     } else if (scrollPosition <= 3000) {
-      setLineHeight(Math.min(scrollPosition / 16), 2100 / 16);
+      setLineHeight(Math.min(scrollPosition / 16, 2100 / 16));
       setThirdDotProperties({
         color: 'rgb(239, 239, 239)',
         height: '0.85rem',
