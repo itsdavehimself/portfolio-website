@@ -130,14 +130,20 @@ export default function AboutMe() {
           </h2>
           <div className={styles['about-me']}>
             <div className={styles.resume}>
-              <button
-                className={styles['resume-btn']}
-                onMouseEnter={handleHoverResume}
-                onMouseLeave={handleHoverResumeLeave}
-                style={{ opacity: 1 - contentProgress.current * 2 }}
+              <a
+                href="https://itsdavehimself.github.io/resume/"
+                target="_blank"
+                rel="noreferrer"
               >
-                RESUME
-              </button>
+                <button
+                  className={styles['resume-btn']}
+                  onMouseEnter={handleHoverResume}
+                  onMouseLeave={handleHoverResumeLeave}
+                  style={{ opacity: 1 - contentProgress.current * 2 }}
+                >
+                  RESUME
+                </button>
+              </a>
             </div>
             <div
               className={styles['about-me-paragraph']}
