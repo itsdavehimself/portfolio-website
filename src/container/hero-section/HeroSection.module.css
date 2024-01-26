@@ -46,7 +46,7 @@ h1 {
   align-self: flex-start;
   padding-right: 6rem;
   span {
-    font-size: 11rem;
+    font-size: 10rem;
     margin: 0;
     line-height: 0.8;
     font-weight: 900;
@@ -57,7 +57,7 @@ h1 {
 .developer {
   align-self: flex-end;
   span {
-    font-size: 11rem;
+    font-size: 10rem;
     margin: 0;
     line-height: 0.8;
     font-weight: 900;
@@ -72,7 +72,6 @@ h1 {
     color: #efefef;
     margin: 0;
     font-size: 1rem;
-    font-family: 'Avenir';
     font-weight: 100;
     align-self: flex-end;
   }
