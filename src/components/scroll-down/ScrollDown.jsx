@@ -32,7 +32,7 @@ export default function ScrollDown() {
         textProps={{
           style: {
             fontSize: '1.035rem',
-            fontFamily: 'Avenir',
+            fontFamily: 'Avenir, Helvetica Neue, Arial, sans-serif',
             fontWeight: 500,
           },
         }}
