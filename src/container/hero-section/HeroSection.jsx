@@ -1,4 +1,4 @@
-import headshotColor from '../../assets/headshot.jpeg';
+import headshotColor from '../../assets/headshot.jpg';
 import styles from './HeroSection.module.css';
 import { motion, useScroll } from 'framer-motion';
 import IntroSequence from '../../components/intro-sequence/IntroSequence';
