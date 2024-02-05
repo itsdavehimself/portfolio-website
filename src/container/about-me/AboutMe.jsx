@@ -131,7 +131,7 @@ export default function AboutMe() {
           <div className={styles['about-me']}>
             <div className={styles.resume}>
               <a
-                href="https://drive.google.com/file/d/1CojkET-9xawziYjDhEbbDSvtPfkjenDW/view?usp=sharing"
+                href="https://drive.google.com/file/d/10FGSiOQMB3szRZ0bmP853eIsakApvkU_/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
               >
