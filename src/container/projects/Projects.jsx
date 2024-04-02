@@ -5,11 +5,8 @@ import { CustomCursorContext } from '../../context/CustomCursorContext';
 import { useScroll, motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import chainseekerImg from '../../assets/chainseeker-mockup-portrait.jpg';
-import shoppingCartImg from '../../assets/1337market-mockup-portrait.jpg';
+import renderCoveImg from '../../assets/rendercove-mockup-portrait.jpg';
 import rememberImg from '../../assets/remember-mockup-portrait.jpg';
-import chainseekerLandscapeImg from '../../assets/chainseeker-mockup-landscape.jpg';
-import shoppingCartLandscapeImg from '../../assets/1337market-mockup-landscape.jpg';
-import rememberLandscapeImg from '../../assets/remember-mockup-landscape.jpg';
 import propTypes from 'prop-types';
 
 export default function Projects({ setIsTransitioning }) {
@@ -151,6 +148,29 @@ export default function Projects({ setIsTransitioning }) {
             <div className={styles['project-title-container']}>
               <Link
                 onClick={() =>
+                  handleClick('/projects/rendercove', navigateDelayTime)
+                }
+              >
+                <div
+                  onMouseEnter={handleHoverSecondProject}
+                  onMouseLeave={handleHoverSecondProjectLeave}
+                  style={{
+                    transform: `translateY(${
+                      projectTitleProgress.current * 8
+                    }rem)`,
+                    opacity: 1 - projectTitleProgress.current,
+                  }}
+                >
+                  <h3 className={styles['project-title']}>RENDERCOVE</h3>
+                  <p className={styles['mobile-descriptions']}>
+                    FULL-STACK ART COMMUNITY PLATFORM
+                  </p>
+                </div>
+              </Link>
+            </div>
+            <div className={styles['project-title-container']}>
+              <Link
+                onClick={() =>
                   handleClick('/projects/chainseeker', navigateDelayTime)
                 }
               >
@@ -167,29 +187,6 @@ export default function Projects({ setIsTransitioning }) {
                   <h3 className={styles['project-title']}>CHAINSEEKER</h3>
                   <p className={styles['mobile-descriptions']}>
                     FULL-STACK APPLICATION
-                  </p>
-                </div>
-              </Link>
-            </div>
-            <div className={styles['project-title-container']}>
-              <Link
-                onClick={() =>
-                  handleClick('/projects/1337market', navigateDelayTime)
-                }
-              >
-                <div
-                  onMouseEnter={handleHoverSecondProject}
-                  onMouseLeave={handleHoverSecondProjectLeave}
-                  style={{
-                    transform: `translateY(${
-                      projectTitleProgress.current * 8
-                    }rem)`,
-                    opacity: 1 - projectTitleProgress.current,
-                  }}
-                >
-                  <h3 className={styles['project-title']}>1337MARKET</h3>
-                  <p className={styles['mobile-descriptions']}>
-                    FRONT-END SHOPPING CART
                   </p>
                 </div>
               </Link>
@@ -253,11 +250,11 @@ export default function Projects({ setIsTransitioning }) {
                   className={styles['project-card']}
                 >
                   <img
-                    src={shoppingCartImg}
-                    alt="1337Market Project"
+                    src={renderCoveImg}
+                    alt="RenderCove"
                     className={styles['project-image']}
                   ></img>{' '}
-                  <div> Frontend Shopping Cart</div>
+                  <div> Full-Stack Art Community Platform</div>
                 </motion.div>
               )}
             </AnimatePresence>

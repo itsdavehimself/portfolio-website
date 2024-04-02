@@ -19,11 +19,11 @@ import {
   chainseekerChallenges,
 } from './data/chainseeker-project-data';
 import {
-  shoppingCartDescription,
-  shoppingCartTechStack,
-  shoppingCartKeyFeatures,
-  shoppingCartChallenges,
-} from './data/shoppingcart-project-data';
+  rendercoveDescription,
+  rendercoveChallenges,
+  rendercoveKeyFeatures,
+  rendercoveTechstack,
+} from './data/rendercove-project-data';
 import {
   rememberDescription,
   rememberTechStack,
@@ -32,7 +32,7 @@ import {
 } from './data/remember-project-data';
 import chainseekerLandscapeImg from './assets/chainseeker-mockup-landscape.jpg';
 import chainseekerPortraitImg from './assets/chainseeker-mockup-portrait.jpg';
-import shoppingCartLandscapeImg from './assets/1337market-mockup-landscape.jpg';
+import renderCoveLandscapeImg from './assets/rendercove-landscape-mockup.jpg';
 import shoppingCartPortraitImg from './assets/1337market-mockup-portrait.jpg';
 import rememberLandscapeImg from './assets/remember-mockup-landscape.jpg';
 import rememberPortraitImg from './assets/remember-mockup-portrait.jpg';
@@ -94,19 +94,19 @@ function App() {
             }
           />
           <Route
-            path="/projects/1337market"
+            path="/projects/rendercove"
             element={
               <ProjectDetailPage
-                projectName={'1337MARKET'}
-                projectDescription={shoppingCartDescription}
-                techStack={shoppingCartTechStack}
-                year={'2023'}
+                projectName={'RENDERCOVE'}
+                projectDescription={rendercoveDescription}
+                techStack={rendercoveTechstack}
+                year={'2024'}
                 mobileImgSrc={shoppingCartPortraitImg}
-                imgSrc={shoppingCartLandscapeImg}
-                imgAlt={'1337market app'}
-                keyFeatures={shoppingCartKeyFeatures}
-                challenges={shoppingCartChallenges}
-                repoURL={'https://github.com/itsdavehimself/top-shopping-cart'}
+                imgSrc={renderCoveLandscapeImg}
+                imgAlt={'RenderCove app'}
+                keyFeatures={rendercoveKeyFeatures}
+                challenges={rendercoveChallenges}
+                repoURL={'https://github.com/itsdavehimself/render-cove'}
                 liveURL={'https://curious-gingersnap-75b4f3.netlify.app'}
               />
             }
