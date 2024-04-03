@@ -85,7 +85,7 @@ const ProjectDetailPage = ({
                 PROJECT REPO
               </button>
             </a>
-            <a href={liveURL} target="_blank" rel="noreferrer">
+            {/* <a href={liveURL} target="_blank" rel="noreferrer">
               <button
                 onMouseEnter={handleNavBtnHover}
                 onMouseLeave={handleNavBtnHoverLeave}
@@ -93,7 +93,7 @@ const ProjectDetailPage = ({
               >
                 LIVE SITE
               </button>
-            </a>
+            </a> */}
           </motion.div>
         </nav>
         <div className={styles['project-details-hero']}>
@@ -217,7 +217,7 @@ ProjectDetailPage.propTypes = {
   keyFeatures: PropTypes.array,
   challenges: PropTypes.array,
   repoURL: PropTypes.string,
-  liveURL: PropTypes.string,
+  // liveURL: PropTypes.string,
 };
 
 export default ProjectDetailPage;
