@@ -89,7 +89,7 @@ function App() {
                 repoURL={
                   'https://github.com/itsdavehimself/disc-golf-scorecard-app'
                 }
-                liveURL={'https://magical-jalebi-893a82.netlify.app/'}
+                liveURL={'https://chainseeker.netlify.app/'}
               />
             }
           />
@@ -107,7 +107,7 @@ function App() {
                 keyFeatures={rendercoveKeyFeatures}
                 challenges={rendercoveChallenges}
                 repoURL={'https://github.com/itsdavehimself/render-cove'}
-                liveURL={'https://curious-gingersnap-75b4f3.netlify.app'}
+                liveURL={'https://rendercove.netlify.app/'}
               />
             }
           />
@@ -125,7 +125,7 @@ function App() {
                 keyFeatures={rememberKeyFeatures}
                 challenges={rememberChallenges}
                 repoURL={'https://github.com/itsdavehimself/incremental-game'}
-                liveURL={'https://mellifluous-sprinkles-ccda1b.netlify.app'}
+                liveURL={'https://remember.netlify.app'}
               />
             }
           />
