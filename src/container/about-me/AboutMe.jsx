@@ -141,7 +141,7 @@ export default function AboutMe() {
                   onMouseLeave={handleHoverResumeLeave}
                   style={{ opacity: 1 - contentProgress.current * 2 }}
                 >
-                  RESUME
+                  RÉSUMÉ
                 </button>
               </a>
             </div>
