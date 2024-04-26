@@ -33,7 +33,7 @@ import {
 import chainseekerLandscapeImg from './assets/chainseeker-mockup-landscape.jpg';
 import chainseekerPortraitImg from './assets/chainseeker-mockup-portrait.jpg';
 import renderCoveLandscapeImg from './assets/rendercove-landscape-mockup.jpg';
-import renderCovePortraitImg from '../../assets/rendercove-mockup-portrait.jpg';
+import renderCovePortraitImg from './assets/rendercove-mockup-portrait.jpg';
 import rememberLandscapeImg from './assets/remember-mockup-landscape.jpg';
 import rememberPortraitImg from './assets/remember-mockup-portrait.jpg';
 import SlideTransition from './components/slide-transition/SlideTransition';
