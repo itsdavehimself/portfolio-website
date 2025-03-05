@@ -165,7 +165,7 @@ export default function ContactMe() {
                 onMouseEnter={handleHoverEmail}
                 onMouseLeave={handleHoverEmailLeave}
               >
-                SEND DIGITAL MAIL
+                LET&apos;S TALK
               </button>
             </motion.div>
           </div>
