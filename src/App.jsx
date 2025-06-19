@@ -63,7 +63,7 @@ function App() {
             element={
               <div className="App">
                 <CustomCursor />
-                <SideDots scrollPosition={scrollPosition} />
+                {/* <SideDots scrollPosition={scrollPosition} /> */}
                 <Navbar />
                 <HeroSection scrollPosition={scrollPosition} />
                 <AboutMe scrollPosition={scrollPosition} />
