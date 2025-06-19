@@ -148,6 +148,29 @@ export default function Projects({ setIsTransitioning }) {
             <div className={styles['project-title-container']}>
               <Link
                 onClick={() =>
+                  handleClick('/projects/luria', navigateDelayTime)
+                }
+              >
+                <div
+                  onMouseEnter={handleHoverThirdProject}
+                  onMouseLeave={handleHoverThirdProjectLeave}
+                  style={{
+                    transform: `translateY(${
+                      projectTitleProgress.current * 8
+                    }rem)`,
+                    opacity: 1 - projectTitleProgress.current,
+                  }}
+                >
+                  <h3 className={styles['project-title']}>LURIA</h3>
+                  <p className={styles['mobile-descriptions']}>
+                    AI-Powered Flashcard Browser Extension
+                  </p>
+                </div>
+              </Link>
+            </div>
+            <div className={styles['project-title-container']}>
+              <Link
+                onClick={() =>
                   handleClick('/projects/rendercove', navigateDelayTime)
                 }
               >
@@ -187,29 +210,6 @@ export default function Projects({ setIsTransitioning }) {
                   <h3 className={styles['project-title']}>CHAINSEEKER</h3>
                   <p className={styles['mobile-descriptions']}>
                     FULL-STACK APPLICATION
-                  </p>
-                </div>
-              </Link>
-            </div>
-            <div className={styles['project-title-container']}>
-              <Link
-                onClick={() =>
-                  handleClick('/projects/remember', navigateDelayTime)
-                }
-              >
-                <div
-                  onMouseEnter={handleHoverThirdProject}
-                  onMouseLeave={handleHoverThirdProjectLeave}
-                  style={{
-                    transform: `translateY(${
-                      projectTitleProgress.current * 8
-                    }rem)`,
-                    opacity: 1 - projectTitleProgress.current,
-                  }}
-                >
-                  <h3 className={styles['project-title']}>RE:MEMBER</h3>
-                  <p className={styles['mobile-descriptions']}>
-                    INCREMENTAL/IDLE BROWSER GAME
                   </p>
                 </div>
               </Link>
@@ -269,10 +269,10 @@ export default function Projects({ setIsTransitioning }) {
                 >
                   <img
                     src={rememberImg}
-                    alt="Remember Project"
+                    alt="Luria Project"
                     className={styles['project-image']}
                   ></img>{' '}
-                  <div>Incremental/Idle Browser Game</div>
+                  <div>AI-Powered Flashcard Browser Extension</div>
                 </motion.div>
               )}
             </AnimatePresence>

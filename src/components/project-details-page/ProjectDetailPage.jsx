@@ -18,6 +18,8 @@ const ProjectDetailPage = ({
   challenges,
   repoURL,
   liveURL,
+  loomOnly,
+  loomURL,
 }) => {
   const { setType } = useContext(CustomCursorContext);
   const customEase = [0.16, 0.5, 0.2, 1];
@@ -76,24 +78,38 @@ const ProjectDetailPage = ({
             variants={createVariant(1)}
             className={styles['project-nav']}
           >
-            <a href={repoURL} target="_blank" rel="noreferrer">
-              <button
-                onMouseEnter={handleNavBtnHover}
-                onMouseLeave={handleNavBtnHoverLeave}
-                className={styles['pill-btn']}
-              >
-                PROJECT REPO
-              </button>
-            </a>
-            <a href={liveURL} target="_blank" rel="noreferrer">
-              <button
-                onMouseEnter={handleNavBtnHover}
-                onMouseLeave={handleNavBtnHoverLeave}
-                className={styles['pill-btn']}
-              >
-                LIVE SITE
-              </button>
-            </a>
+            {loomOnly === false ? (
+              <>
+                <a href={repoURL} target="_blank" rel="noreferrer">
+                  <button
+                    onMouseEnter={handleNavBtnHover}
+                    onMouseLeave={handleNavBtnHoverLeave}
+                    className={styles['pill-btn']}
+                  >
+                    PROJECT REPO
+                  </button>
+                </a>
+                <a href={liveURL} target="_blank" rel="noreferrer">
+                  <button
+                    onMouseEnter={handleNavBtnHover}
+                    onMouseLeave={handleNavBtnHoverLeave}
+                    className={styles['pill-btn']}
+                  >
+                    LIVE SITE
+                  </button>
+                </a>
+              </>
+            ) : (
+              <a href={loomURL} target="_blank" rel="noreferrer">
+                <button
+                  onMouseEnter={handleNavBtnHover}
+                  onMouseLeave={handleNavBtnHoverLeave}
+                  className={styles['pill-btn']}
+                >
+                  LOOM DEMO
+                </button>
+              </a>
+            )}
           </motion.div>
         </nav>
         <div className={styles['project-details-hero']}>
@@ -218,6 +234,8 @@ ProjectDetailPage.propTypes = {
   challenges: PropTypes.array,
   repoURL: PropTypes.string,
   liveURL: PropTypes.string,
+  loomOnly: PropTypes.bool,
+  loomURL: PropTypes.string,
 };
 
 export default ProjectDetailPage;

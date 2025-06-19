@@ -25,11 +25,11 @@ import {
   rendercoveTechstack,
 } from './data/rendercove-project-data';
 import {
-  rememberDescription,
-  rememberTechStack,
-  rememberKeyFeatures,
-  rememberChallenges,
-} from './data/remember-project-data';
+  luriaChallenges,
+  luriaDescription,
+  luriaKeyFeatures,
+  luriaTechStack,
+} from './data/luria-project-data';
 import chainseekerLandscapeImg from './assets/chainseeker-mockup-landscape.jpg';
 import chainseekerPortraitImg from './assets/chainseeker-mockup-portrait.jpg';
 import renderCoveLandscapeImg from './assets/rendercove-landscape-mockup.jpg';
@@ -90,6 +90,7 @@ function App() {
                   'https://github.com/itsdavehimself/disc-golf-scorecard-app'
                 }
                 liveURL={'https://chainseeker.netlify.app/'}
+                loomOnly={false}
               />
             }
           />
@@ -108,24 +109,29 @@ function App() {
                 challenges={rendercoveChallenges}
                 repoURL={'https://github.com/itsdavehimself/render-cove'}
                 liveURL={'https://rendercove.netlify.app/'}
+                loomOnly={false}
               />
             }
           />
           <Route
-            path="/projects/remember"
+            path="/projects/luria"
             element={
               <ProjectDetailPage
-                projectName={'RE:MEMBER'}
-                projectDescription={rememberDescription}
-                techStack={rememberTechStack}
-                year={'2024'}
+                projectName={'LURIA'}
+                projectDescription={luriaDescription}
+                techStack={luriaTechStack}
+                year={'2025'}
                 mobileImgSrc={rememberPortraitImg}
                 imgSrc={rememberLandscapeImg}
-                imgAlt={'1337market app'}
-                keyFeatures={rememberKeyFeatures}
-                challenges={rememberChallenges}
+                imgAlt={'Luria app'}
+                keyFeatures={luriaKeyFeatures}
+                challenges={luriaChallenges}
                 repoURL={'https://github.com/itsdavehimself/incremental-game'}
                 liveURL={'https://remember.netlify.app'}
+                loomOnly={true}
+                loomURL={
+                  'https://www.loom.com/share/2061a35a85014d7dad50f72c85345986'
+                }
               />
             }
           />
