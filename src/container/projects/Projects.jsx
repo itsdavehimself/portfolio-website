@@ -6,7 +6,7 @@ import { useScroll, motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import chainseekerImg from '../../assets/chainseeker-mockup-portrait.jpg';
 import renderCoveImg from '../../assets/rendercove-mockup-portrait.jpg';
-import rememberImg from '../../assets/remember-mockup-portrait.jpg';
+import luriaImg from '../../assets/luria-mockup-portrait.jpg';
 import propTypes from 'prop-types';
 
 export default function Projects({ setIsTransitioning }) {
@@ -268,7 +268,7 @@ export default function Projects({ setIsTransitioning }) {
                   className={styles['project-card']}
                 >
                   <img
-                    src={rememberImg}
+                    src={luriaImg}
                     alt="Luria Project"
                     className={styles['project-image']}
                   ></img>{' '}
