@@ -163,7 +163,7 @@ export default function Projects({ setIsTransitioning }) {
                 >
                   <h3 className={styles['project-title']}>LURIA</h3>
                   <p className={styles['mobile-descriptions']}>
-                    AI-Powered Flashcard Browser Extension
+                    AI FLASHCARD BROWSER EXTENSION
                   </p>
                 </div>
               </Link>
@@ -272,7 +272,7 @@ export default function Projects({ setIsTransitioning }) {
                     alt="Luria Project"
                     className={styles['project-image']}
                   ></img>{' '}
-                  <div>AI-Powered Flashcard Browser Extension</div>
+                  <div>AI Flashcard Browser Extension</div>
                 </motion.div>
               )}
             </AnimatePresence>
