@@ -1,4 +1,4 @@
-const luriaDescription = `Luria is a production-ready SaaS browser extension that auto-generates high-quality flashcards from online course videos. Built to streamline the study process, Luria extracts transcripts from Udemy and similar platforms, uses Gemini AI for card generation, and supports exports to CSV, AnkiConnect, and APKG. The project showcases end-to-end full-stack development, serverless architecture on AWS, and third-party API integration, all packaged in a clean, responsive UI optimized for a browser extension environment.`;
+const luriaDescription = `Luria is a production-ready SaaS browser extension that auto-generates high-quality flashcards from Udemy course videos. Built to streamline the study process, Luria extracts transcripts from Udemy, uses Gemini AI for card generation, and supports exports to CSV, AnkiConnect, and APKG. The project showcases end-to-end full-stack development, serverless architecture on AWS, and third-party API integration, all packaged in a clean, responsive UI optimized for a browser extension environment.`;
 
 const luriaTechStack = [
   'React',
